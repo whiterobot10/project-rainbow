@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@export var LOBBY: Control
+
 
 func _ready() -> void:
 	%VersionLb.text = Global.VERSION
@@ -13,13 +15,13 @@ func _on_ruleset_changed(ruleset: Ruleset) -> void:
 func _on_host_btn_pressed() -> void:
 	Global.player_name = %HostPlayerName.text
 	await ConnectionManager.create_room()
-	%Lobby.visible = true
+	LOBBY.visible = true
 
 
 func _on_join_btn_pressed() -> void:
 	Global.player_name = %JoinPlayerName.text
 	ConnectionManager.join_room(%JoinRoomCode.text as String)
-	%Lobby.visible = true
+	LOBBY.visible = true
 
 
 func _on_quit_btn_pressed() -> void:

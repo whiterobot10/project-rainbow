@@ -23,7 +23,6 @@ The game also need a server to work, you can launch a temporary development serv
 ```
 git clone https://github.com/Mouthless-Stoat/project-rainbow-server.git
 cd project-rainbow-server
-git remote add origin [your fork]
 nix develop
 ```
 

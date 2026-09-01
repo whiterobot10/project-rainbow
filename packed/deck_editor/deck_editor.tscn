@@ -1,0 +1,781 @@
+[gd_scene format=3 uid="uid://b1uill1ebneur"]
+
+[ext_resource type="Script" uid="uid://cf6i6u1gvdj0q" path="res://packed/deck_editor/deck_editor.gd" id="1_6xw6s"]
+[ext_resource type="Texture2D" uid="uid://dqfyam8efaq30" path="res://asset/cost/icon/blood.png" id="2_dvr5p"]
+[ext_resource type="Script" uid="uid://b87716cfhc3wj" path="res://scripts/utils/filter_btn.gd" id="3_xlxb4"]
+[ext_resource type="Texture2D" uid="uid://bramr4aosbmut" path="res://asset/cost/icon/bone.png" id="4_oayih"]
+[ext_resource type="Texture2D" uid="uid://bp6mredt04qp1" path="res://asset/cost/icon/energy.png" id="5_lsi0t"]
+[ext_resource type="Texture2D" uid="uid://bar40lyb4enys" path="res://asset/cost/icon/cell.png" id="6_n36yk"]
+[ext_resource type="Texture2D" uid="uid://c3atmqgvl5k6k" path="res://asset/cost/mox/green.png" id="7_vy2rl"]
+[ext_resource type="Texture2D" uid="uid://cf6lsn138ggov" path="res://asset/cost/mox/orange.png" id="8_fulsk"]
+[ext_resource type="Texture2D" uid="uid://0ytpdf5x5fqm" path="res://asset/cost/mox/blue.png" id="9_imhq3"]
+[ext_resource type="Texture2D" uid="uid://eufx35opg5nn" path="res://asset/ui/sliders.png" id="10_2xbh8"]
+[ext_resource type="Script" uid="uid://ccuyd8bprftvj" path="res://scripts/utils/ui_control_btn.gd" id="11_hmev4"]
+[ext_resource type="Texture2D" uid="uid://drctpsa3ysmww" path="res://asset/ui/trash.png" id="12_jj1cb"]
+[ext_resource type="PackedScene" uid="uid://dwhmym7riy2eo" path="res://prefab/separator.tscn" id="13_kob1x"]
+[ext_resource type="PackedScene" uid="uid://d4kntw6wxj30n" path="res://prefab/card/card.tscn" id="14_leeej"]
+[ext_resource type="Texture2D" uid="uid://c5ce65fxh4esr" path="res://asset/portraits/Broken Obol 2.png" id="15_lgm05"]
+[ext_resource type="Script" uid="uid://b3mqoebomfdgf" path="res://scripts/utils/deck_list.gd" id="16_71l7r"]
+[ext_resource type="Texture2D" uid="uid://wf8cx0m2hjni" path="res://asset/rarities/icon/rare.png" id="17_rhgg3"]
+[ext_resource type="Texture2D" uid="uid://clb1vbd4gap53" path="res://asset/rarities/icon/common.png" id="18_lkltt"]
+[ext_resource type="Texture2D" uid="uid://c0sbrhw2yixew" path="res://asset/traits/bloodless.png" id="19_haat0"]
+[ext_resource type="Texture2D" uid="uid://cur0he3dpdymn" path="res://asset/traits/boneless.png" id="20_4tybm"]
+[ext_resource type="Texture2D" uid="uid://c11x1if5gvsae" path="res://asset/traits/unhammerable.png" id="21_f0t26"]
+[ext_resource type="Texture2D" uid="uid://dkayi2nkk7kle" path="res://asset/temples/beast.png" id="22_1r1au"]
+[ext_resource type="Texture2D" uid="uid://rjeqaq7mh5ai" path="res://asset/temples/undead.png" id="23_p0gia"]
+[ext_resource type="Texture2D" uid="uid://d0pgud2366y2d" path="res://asset/temples/technology.png" id="24_3in3k"]
+[ext_resource type="Texture2D" uid="uid://sm1cpln8tju1" path="res://asset/temples/magick.png" id="25_c1vp8"]
+[ext_resource type="Texture2D" uid="uid://b4xt2n5ms2854" path="res://asset/tribes/avian.png" id="26_eegxv"]
+[ext_resource type="Texture2D" uid="uid://db4vnhubvq6cd" path="res://asset/tribes/canine.png" id="27_dtql6"]
+[ext_resource type="Texture2D" uid="uid://c7vwtrecu4ycn" path="res://asset/tribes/hooved.png" id="28_q8udg"]
+[ext_resource type="Texture2D" uid="uid://c6ggvhmwlx5sf" path="res://asset/tribes/insect.png" id="29_03tpa"]
+[ext_resource type="Texture2D" uid="uid://b10hn815aqf2d" path="res://asset/tribes/reptile.png" id="30_k04l4"]
+[ext_resource type="Texture2D" uid="uid://b71xovfwgg86j" path="res://asset/tribes/crustacean.png" id="31_b5cuv"]
+[ext_resource type="Texture2D" uid="uid://mrrwb3tcjghd" path="res://asset/tribes/piscine.png" id="32_mqvdt"]
+[ext_resource type="Texture2D" uid="uid://c0fvnxxcokxgx" path="res://asset/tribes/gems.png" id="33_cas3w"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lgr22"]
+color = Color(0.12941177, 0.47843137, 0.84705883, 1)
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
+bg_color = Color(0, 0, 0, 0.27450982)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt61w"]
+bg_color = Color(0.12941177, 0.47843137, 0.84705883, 1)
+
+[node name="DeckEditor" type="PanelContainer" unique_id=1727547133]
+z_index = 40
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xw6s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2119442728]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1654877218]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=286517640]
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1289629403]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=894069199]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NameFilter" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1104210276]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Card Name Search"
+
+[node name="SigilFilter" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1191977043]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Sigils Search (Separated by comma)"
+
+[node name="CostsFiltersContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1483385652]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BloodFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=125688811 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("2_dvr5p")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "blood"
+deck_editor = NodePath("../../../../../..")
+
+[node name="BoneFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=7984217 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("4_oayih")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "bone"
+deck_editor = NodePath("../../../../../..")
+
+[node name="EnergyFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=302513252 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("5_lsi0t")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "energy"
+deck_editor = NodePath("../../../../../..")
+
+[node name="CellFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1580352685 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("6_n36yk")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "cell"
+deck_editor = NodePath("../../../../../..")
+
+[node name="GreenFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1539141062 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("7_vy2rl")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "green"
+deck_editor = NodePath("../../../../../..")
+
+[node name="OrangeFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=464963106 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("8_fulsk")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "orange"
+deck_editor = NodePath("../../../../../..")
+
+[node name="BlueFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=930525016 node_paths=PackedStringArray("deck_editor")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("9_imhq3")
+icon_alignment = 1
+script = ExtResource("3_xlxb4")
+filter_name = "blue"
+deck_editor = NodePath("../../../../../..")
+
+[node name="AdvanceFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1386894605 node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+icon = ExtResource("10_2xbh8")
+icon_alignment = 1
+script = ExtResource("11_hmev4")
+ui = NodePath("../../../../../../FilterPopUp")
+
+[node name="ClearFilter" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=331765393]
+layout_mode = 2
+icon = ExtResource("12_jj1cb")
+
+[node name="Separator2" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=444231581 instance=ExtResource("13_kob1x")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1672131195]
+custom_minimum_size = Vector2(482, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=532488568]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardListLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CenterContainer" unique_id=1074765618]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "No Card Available :("
+
+[node name="CardList" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=763365040]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 6
+
+[node name="CardContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2058315583 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer2" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=469332589 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer3" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=4641247 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer4" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1282000181 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer5" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2216996 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer6" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=46640885 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer7" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1910650461 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer8" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1839144006 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer9" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2122427874 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer10" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1252710111 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer11" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=713357641 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer12" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=480215843 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer13" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1866006278 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer14" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2010719257 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer15" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1273382072 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer16" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=160968315 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer17" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=391747258 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer18" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=819786000 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer19" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=501019948 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer20" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=77839264 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer21" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1374132958 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer22" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=816087863 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer23" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=486917036 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer24" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1852510757 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer25" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1450995139 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer26" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1418304383 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer27" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2060839955 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer28" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1660799906 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer29" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=706086174 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer30" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=841548241 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer31" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=987541671 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="CardContainer32" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2119772666 instance=ExtResource("14_leeej")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=1772666359]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_lgr22")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1049304171]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=284803446]
+layout_mode = 2
+
+[node name="DeckBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2002028378 node_paths=PackedStringArray("ui")]
+custom_minimum_size = Vector2(258, 28)
+layout_mode = 2
+script = ExtResource("11_hmev4")
+ui = NodePath("../../../../DeckPopup")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn" unique_id=891888729]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 28.0
+
+[node name="DeckIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=1406312806]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("15_lgm05")
+stretch_mode = 5
+
+[node name="DeckName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=543990887]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.03137255, 0.08627451, 1)
+text = "Test Deck"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=1204760694]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="MainSizeLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer/VBoxContainer" unique_id=1546776806]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.06666667, 0.25882354, 0.45490196, 1)
+bbcode_enabled = true
+text = "Main: 112310/20+ Cards"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="SideSizeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer/VBoxContainer" unique_id=1143772096]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.06666667, 0.25882354, 0.45490196, 1)
+text = "Side: 10/10 Cards"
+horizontal_alignment = 2
+
+[node name="Separator" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=892428836 instance=ExtResource("13_kob1x")]
+layout_mode = 2
+
+[node name="DeckTabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=74616056]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Main" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=980129183]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="MainDeckContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main" unique_id=690224136]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+script = ExtResource("16_71l7r")
+
+[node name="Side" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=1747050504]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=1209043073]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer" unique_id=261352169]
+layout_mode = 2
+text = "Side Deck:"
+
+[node name="SideOption" type="OptionButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer" unique_id=2101883739]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+popup/item_0/text = "10 Squirrel"
+popup/item_0/id = 0
+popup/item_1/text = "Your mom"
+popup/item_1/id = 1
+
+[node name="CatOptContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=1968289127]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer" unique_id=1806925881]
+layout_mode = 2
+text = "Options:"
+
+[node name="CatOption" type="OptionButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer" unique_id=579306063]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=1408101607]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 0
+
+[node name="SideDeckContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer" unique_id=1017317128]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+script = ExtResource("16_71l7r")
+
+[node name="Sideboard" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=331695331]
+visible = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_tab_index = 2
+
+[node name="SideboardContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Sideboard" unique_id=418725910]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+script = ExtResource("16_71l7r")
+
+[node name="Separator2" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=214973917 instance=ExtResource("13_kob1x")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=158332384]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer" unique_id=2144670635]
+layout_mode = 2
+
+[node name="ExitBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1563256546 node_paths=PackedStringArray("ui")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+script = ExtResource("11_hmev4")
+ui = NodePath("../../../../../..")
+make_visible = false
+
+[node name="SaveExitBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=524520323]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save & Exit"
+
+[node name="FilterPopUp" type="PanelContainer" parent="." unique_id=2120304349]
+visible = false
+z_index = 100
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+
+[node name="CenterContainer" type="CenterContainer" parent="FilterPopUp" unique_id=966200171]
+layout_mode = 2
+
+[node name="Popup" type="PanelContainer" parent="FilterPopUp/CenterContainer" unique_id=609275515]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+theme_type_variation = &"BasicPopup"
+
+[node name="Margin container" type="MarginContainer" parent="FilterPopUp/CenterContainer/Popup" unique_id=275149965]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container" unique_id=38985238]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer" unique_id=1794468094]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="RarityFilters" type="VBoxContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=461690683]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters" unique_id=798335032]
+layout_mode = 2
+text = "Rarities:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters" unique_id=995134684]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="RarityFiltersContainer" type="GridContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer" unique_id=1432148833]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Button" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer/RarityFiltersContainer" unique_id=1730089865]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rare"
+icon = ExtResource("17_rhgg3")
+
+[node name="Button2" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer/RarityFiltersContainer" unique_id=961973919]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Common"
+icon = ExtResource("18_lkltt")
+
+[node name="TraitFilters" type="VBoxContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=152689449]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters" unique_id=275131162]
+layout_mode = 2
+text = "Traits:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters" unique_id=375084339]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TraitFiltersContainer" type="GridContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer" unique_id=416389463]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Button" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=646547947]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bloodless"
+icon = ExtResource("19_haat0")
+
+[node name="Button2" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=1621494386]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Boneless"
+icon = ExtResource("20_4tybm")
+
+[node name="Button3" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=1786543400]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Unhammerable"
+icon = ExtResource("21_f0t26")
+
+[node name="TempleFilters" type="VBoxContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=1641330401]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters" unique_id=421798385]
+layout_mode = 2
+text = "Temples:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters" unique_id=2076428558]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TempleFiltersContainer" type="GridContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer" unique_id=1334506958]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Button" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=473073273]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Beast"
+icon = ExtResource("22_1r1au")
+
+[node name="Button2" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=1059478854]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Undead"
+icon = ExtResource("23_p0gia")
+
+[node name="Button4" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=912551396]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Technology
+"
+icon = ExtResource("24_3in3k")
+
+[node name="Button3" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=724048174]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Magick"
+icon = ExtResource("25_c1vp8")
+
+[node name="TribeFilters" type="VBoxContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=1440816646]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters" unique_id=320791718]
+layout_mode = 2
+text = "Tribes:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters" unique_id=214242952]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TribeFiltersContainer" type="GridContainer" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer" unique_id=1396436379]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Button" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1812002893]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Avian"
+icon = ExtResource("26_eegxv")
+
+[node name="Button2" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=201490645]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Canine"
+icon = ExtResource("27_dtql6")
+
+[node name="Button5" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=69703963]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hooved"
+icon = ExtResource("28_q8udg")
+
+[node name="Button6" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=150691115]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Insect"
+icon = ExtResource("29_03tpa")
+
+[node name="Button8" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1916941452]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reptile"
+icon = ExtResource("30_k04l4")
+
+[node name="Button3" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=713318544]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Crustacean"
+icon = ExtResource("31_b5cuv")
+
+[node name="Button7" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1667357319]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Piscine"
+icon = ExtResource("32_mqvdt")
+
+[node name="Button4" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=349425655]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gems"
+icon = ExtResource("33_cas3w")
+
+[node name="ExitBtn" type="Button" parent="FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer" unique_id=1992258374 node_paths=PackedStringArray("ui")]
+layout_mode = 2
+text = "Done"
+script = ExtResource("11_hmev4")
+ui = NodePath("../../../../..")
+make_visible = false
+
+[node name="DeckPopup" type="PanelContainer" parent="." unique_id=1041032828]
+visible = false
+z_index = 100
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+
+[node name="CenterContainer" type="CenterContainer" parent="DeckPopup" unique_id=622129581]
+layout_mode = 2
+
+[node name="Popup" type="PanelContainer" parent="DeckPopup/CenterContainer" unique_id=223372963]
+custom_minimum_size = Vector2(486, 200)
+layout_mode = 2
+theme_type_variation = &"BasicPopup"
+
+[node name="MarginContainer" type="MarginContainer" parent="DeckPopup/CenterContainer/Popup" unique_id=545888073]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer" unique_id=967690626]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=1743936679]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=476838494]
+layout_mode = 2
+text = "Deck Name:"
+
+[node name="DeckNameEdit" type="LineEdit" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1284232879]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=866865035]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jt61w")
+
+[node name="MarginContainer" type="MarginContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer" unique_id=890661058]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=830295398]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="DeckIconContainer" type="FlowContainer" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=860583015]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=1253686286 node_paths=PackedStringArray("ui")]
+layout_mode = 2
+text = "Done"
+script = ExtResource("11_hmev4")
+ui = NodePath("../../../../..")
+make_visible = false
+
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NameFilter" to="." method="_on_name_filter_text_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer/ClearFilter" to="." method="_on_clear_filter_pressed"]
+[connection signal="tab_changed" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="on_card_added" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main/MainDeckContainer" to="." method="_update_card_count"]
+[connection signal="on_card_removed" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main/MainDeckContainer" to="." method="_update_card_count"]
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer/SideOption" to="." method="_on_side_option_item_selected"]
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer/CatOption" to="." method="_on_cat_option_item_selected"]
+[connection signal="on_card_added" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer/SideDeckContainer" to="." method="_update_card_count"]
+[connection signal="on_card_removed" from="MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer/SideDeckContainer" to="." method="_update_card_count"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer/SaveExitBtn" to="." method="_on_save_exit_btn_pressed"]
+[connection signal="text_changed" from="DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer/DeckNameEdit" to="." method="_on_deck_name_changed"]

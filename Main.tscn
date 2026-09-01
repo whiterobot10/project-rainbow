@@ -4,47 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://dwhmym7riy2eo" path="res://prefab/separator.tscn" id="2_3dxm6"]
 [ext_resource type="Script" uid="uid://btqyrkhyrycih" path="res://scripts/title.gd" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://ccuyd8bprftvj" path="res://scripts/utils/ui_control_btn.gd" id="3_3dxm6"]
-[ext_resource type="Script" uid="uid://cqunm02g4d8jj" path="res://scripts/lobby.gd" id="3_fos0i"]
 [ext_resource type="Script" uid="uid://srydxdh4voto" path="res://scripts/utils/global_popup.gd" id="3_r0du0"]
-[ext_resource type="Texture2D" uid="uid://dqfyam8efaq30" path="res://asset/cost/icon/blood.png" id="4_c6i3y"]
-[ext_resource type="Script" uid="uid://cf6i6u1gvdj0q" path="res://scripts/deck_editor.gd" id="4_devvj"]
-[ext_resource type="Script" uid="uid://b1j7bkidwk511" path="res://scripts/ruleset_selector.gd" id="5_20pc6"]
-[ext_resource type="Texture2D" uid="uid://bramr4aosbmut" path="res://asset/cost/icon/bone.png" id="5_c2ibq"]
-[ext_resource type="Texture2D" uid="uid://beioiqusnxhs3" path="res://asset/ruleset_icon/plus.png" id="5_jt61w"]
-[ext_resource type="Script" uid="uid://dk8xql1dsosn8" path="res://scripts/deck_library.gd" id="5_v8qla"]
-[ext_resource type="Script" uid="uid://b87716cfhc3wj" path="res://scripts/utils/filter_btn.gd" id="6_3b0ty"]
-[ext_resource type="Texture2D" uid="uid://bp6mredt04qp1" path="res://asset/cost/icon/energy.png" id="6_c2ibq"]
-[ext_resource type="PackedScene" uid="uid://c8sxetevgdvyk" path="res://prefab/ruleset_button/ruleset_btn.tscn" id="6_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://dooq4so256ueh" path="res://asset/ruleset_icon/clipboard.png" id="6_y1tbi"]
-[ext_resource type="Texture2D" uid="uid://c3atmqgvl5k6k" path="res://asset/cost/mox/green.png" id="7_2gh4u"]
-[ext_resource type="Texture2D" uid="uid://bgh3egaw8r84q" path="res://asset/ruleset_icon/link.png" id="7_03owx"]
-[ext_resource type="Script" uid="uid://b3mqoebomfdgf" path="res://scripts/utils/deck_list.gd" id="7_v8qla"]
-[ext_resource type="Texture2D" uid="uid://bar40lyb4enys" path="res://asset/cost/icon/cell.png" id="8_3b0ty"]
-[ext_resource type="Texture2D" uid="uid://cf6lsn138ggov" path="res://asset/cost/mox/orange.png" id="8_devvj"]
-[ext_resource type="Texture2D" uid="uid://uyxl8k3j8l8a" path="res://asset/ruleset_icon/folder.png" id="8_v8qla"]
-[ext_resource type="Texture2D" uid="uid://du2ktv20mkxyp" path="res://asset/ruleset_icon/file.png" id="8_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://0ytpdf5x5fqm" path="res://asset/cost/mox/blue.png" id="9_3b0ty"]
-[ext_resource type="Texture2D" uid="uid://eufx35opg5nn" path="res://asset/ui/sliders.png" id="14_3b0ty"]
-[ext_resource type="Texture2D" uid="uid://drctpsa3ysmww" path="res://asset/ui/trash.png" id="15_1w2xm"]
-[ext_resource type="PackedScene" uid="uid://d4kntw6wxj30n" path="res://prefab/card/card.tscn" id="15_bg4s2"]
-[ext_resource type="Texture2D" uid="uid://c5ce65fxh4esr" path="res://asset/portraits/Broken Obol 2.png" id="15_mxvw5"]
-[ext_resource type="Texture2D" uid="uid://c0sbrhw2yixew" path="res://asset/traits/bloodless.png" id="16_bg4s2"]
-[ext_resource type="Texture2D" uid="uid://wf8cx0m2hjni" path="res://asset/rarities/icon/rare.png" id="17_hhcpw"]
-[ext_resource type="Texture2D" uid="uid://clb1vbd4gap53" path="res://asset/rarities/icon/common.png" id="17_oye8v"]
-[ext_resource type="Texture2D" uid="uid://cur0he3dpdymn" path="res://asset/traits/boneless.png" id="19_40n85"]
-[ext_resource type="Texture2D" uid="uid://c11x1if5gvsae" path="res://asset/traits/unhammerable.png" id="20_gb15f"]
-[ext_resource type="Texture2D" uid="uid://dkayi2nkk7kle" path="res://asset/temples/beast.png" id="21_sph85"]
-[ext_resource type="Texture2D" uid="uid://rjeqaq7mh5ai" path="res://asset/temples/undead.png" id="22_o7g6l"]
-[ext_resource type="Texture2D" uid="uid://d0pgud2366y2d" path="res://asset/temples/technology.png" id="23_vi5kq"]
-[ext_resource type="Texture2D" uid="uid://sm1cpln8tju1" path="res://asset/temples/magick.png" id="24_5mkgo"]
-[ext_resource type="Texture2D" uid="uid://b4xt2n5ms2854" path="res://asset/tribes/avian.png" id="25_ny7u2"]
-[ext_resource type="Texture2D" uid="uid://db4vnhubvq6cd" path="res://asset/tribes/canine.png" id="26_x3yn0"]
-[ext_resource type="Texture2D" uid="uid://b71xovfwgg86j" path="res://asset/tribes/crustacean.png" id="27_1w2xm"]
-[ext_resource type="Texture2D" uid="uid://c0fvnxxcokxgx" path="res://asset/tribes/gems.png" id="28_gngx1"]
-[ext_resource type="Texture2D" uid="uid://c7vwtrecu4ycn" path="res://asset/tribes/hooved.png" id="29_jt61w"]
-[ext_resource type="Texture2D" uid="uid://c6ggvhmwlx5sf" path="res://asset/tribes/insect.png" id="30_v8qla"]
-[ext_resource type="Texture2D" uid="uid://mrrwb3tcjghd" path="res://asset/tribes/piscine.png" id="31_y1tbi"]
-[ext_resource type="Texture2D" uid="uid://b10hn815aqf2d" path="res://asset/tribes/reptile.png" id="32_c2s76"]
+[ext_resource type="PackedScene" uid="uid://cd0ws8cysmijs" path="res://packed/deck_library/deck_library.tscn" id="4_03owx"]
+[ext_resource type="PackedScene" uid="uid://b1uill1ebneur" path="res://packed/deck_editor/deck_editor.tscn" id="5_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://djxumpgf7u3uj" path="res://packed/lobby/lobby.tscn" id="6_20pc6"]
+[ext_resource type="PackedScene" uid="uid://y0g15l7gvt46" path="res://packed/ruleset_selector/ruleset_selector.tscn" id="7_5vvyt"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_fos0i"]
 color = Color(0.12941177, 0.47843137, 0.84705883, 1)
@@ -62,14 +26,6 @@ bg_color = Color(0, 0, 0, 0.5647059)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
 bg_color = Color(0, 0, 0, 0.27450982)
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_lgr22"]
-color = Color(0.12941177, 0.47843137, 0.84705883, 1)
-thickness = 2
-vertical = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt61w"]
-bg_color = Color(0.12941177, 0.47843137, 0.84705883, 1)
-
 [node name="Main" type="Control" unique_id=1219956411]
 layout_mode = 3
 anchors_preset = 15
@@ -78,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleScreen" type="PanelContainer" parent="." unique_id=1662723476]
+[node name="TitleScreen" type="PanelContainer" parent="." unique_id=1662723476 node_paths=PackedStringArray("LOBBY")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,6 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_uu6xs")
+LOBBY = NodePath("../Lobby")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen" unique_id=1075795788]
 layout_mode = 2
@@ -147,14 +104,14 @@ layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- HOST GAME -"
 script = ExtResource("3_3dxm6")
-ui = NodePath("../../../HostSetting")
+ui = NodePath("../../HostSetting")
 
 [node name="JoinSettingBtn" type="Button" parent="TitleScreen/VBoxContainer" unique_id=39820303 node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- JOIN GAME -"
 script = ExtResource("3_3dxm6")
-ui = NodePath("../../../JoinSetting")
+ui = NodePath("../../JoinSetting")
 
 [node name="DeckBtn" type="Button" parent="TitleScreen/VBoxContainer" unique_id=1149911276 node_paths=PackedStringArray("ui")]
 layout_mode = 2
@@ -163,12 +120,11 @@ text = "- DECK LIBRARY -"
 script = ExtResource("3_3dxm6")
 ui = NodePath("../../../DeckLibrary")
 
-[node name="RulesetBtn" type="Button" parent="TitleScreen/VBoxContainer" unique_id=1361696344 node_paths=PackedStringArray("ui")]
+[node name="RulesetBtn" type="Button" parent="TitleScreen/VBoxContainer" unique_id=1361696344]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- RULESET SELECTOR -"
 script = ExtResource("3_3dxm6")
-ui = NodePath("../../../RulesetSelector")
 
 [node name="CreditBtn" type="Button" parent="TitleScreen/VBoxContainer" unique_id=184630252]
 layout_mode = 2
@@ -207,70 +163,65 @@ mouse_filter = 1
 text = "v1.0.0"
 vertical_alignment = 1
 
-[node name="HostSetting" type="PanelContainer" parent="." unique_id=680829730]
+[node name="HostSetting" type="PanelContainer" parent="TitleScreen" unique_id=680829730]
 visible = false
 z_index = 10
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r0du0")
 
-[node name="CenterContainer" type="CenterContainer" parent="HostSetting" unique_id=2002944743]
+[node name="CenterContainer" type="CenterContainer" parent="TitleScreen/HostSetting" unique_id=2002944743]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HostSetting/CenterContainer" unique_id=1957222784]
+[node name="PanelContainer" type="PanelContainer" parent="TitleScreen/HostSetting/CenterContainer" unique_id=1957222784]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 theme_type_variation = &"BasicPopup"
 
-[node name="MarginContainer" type="MarginContainer" parent="HostSetting/CenterContainer/PanelContainer" unique_id=1714909343]
+[node name="MarginContainer" type="MarginContainer" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer" unique_id=1714909343]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer" unique_id=999543219]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer" unique_id=999543219]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1082095966]
+[node name="Label" type="Label" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1082095966]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "--- HOST OPTION ---"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=290216976]
+[node name="Spacer" type="Control" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=290216976]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="GridContainer" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=670382148]
+[node name="HBoxContainer" type="GridContainer" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=670382148]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1636249657]
+[node name="Label" type="Label" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1636249657]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Player Name: "
 
-[node name="HostPlayerName" type="LineEdit" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=279092635]
+[node name="HostPlayerName" type="LineEdit" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=279092635]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Host"
 
-[node name="Label2" type="Label" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=86069114]
+[node name="Label2" type="Label" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=86069114]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Player Name: "
 
-[node name="HostPlayerName2" type="LineEdit" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1846720752]
+[node name="HostPlayerName2" type="LineEdit" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1846720752]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -278,11 +229,11 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Your Name"
 
-[node name="Spacer2" type="Control" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=643039941]
+[node name="Spacer2" type="Control" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=643039941]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HostBtn" type="Button" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1624345845 node_paths=PackedStringArray("ui")]
+[node name="HostBtn" type="Button" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1624345845 node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- HOST -"
@@ -290,7 +241,7 @@ script = ExtResource("3_3dxm6")
 ui = NodePath("../../../../..")
 make_visible = false
 
-[node name="HostCloseBtn" type="Button" parent="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1239507456 node_paths=PackedStringArray("ui")]
+[node name="HostCloseBtn" type="Button" parent="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1239507456 node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- CLOSE -"
@@ -298,80 +249,75 @@ script = ExtResource("3_3dxm6")
 ui = NodePath("../../../../..")
 make_visible = false
 
-[node name="JoinSetting" type="PanelContainer" parent="." unique_id=10633553]
+[node name="JoinSetting" type="PanelContainer" parent="TitleScreen" unique_id=10633553]
 visible = false
 z_index = 20
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r0du0")
 
-[node name="CenterContainer" type="CenterContainer" parent="JoinSetting" unique_id=875565885]
+[node name="CenterContainer" type="CenterContainer" parent="TitleScreen/JoinSetting" unique_id=875565885]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="JoinSetting/CenterContainer" unique_id=938776407]
+[node name="PanelContainer" type="PanelContainer" parent="TitleScreen/JoinSetting/CenterContainer" unique_id=938776407]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 theme_type_variation = &"BasicPopup"
 
-[node name="MarginContainer" type="MarginContainer" parent="JoinSetting/CenterContainer/PanelContainer" unique_id=1915066427]
+[node name="MarginContainer" type="MarginContainer" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer" unique_id=1915066427]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer" unique_id=241140043]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer" unique_id=241140043]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=638144540]
+[node name="Label" type="Label" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=638144540]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "--- JOIN OPTION ---"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=259177736]
+[node name="Spacer" type="Control" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=259177736]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="GridContainer" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=228323640]
+[node name="HBoxContainer" type="GridContainer" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=228323640]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2083367689]
+[node name="Label" type="Label" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2083367689]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Player Name: "
 
-[node name="JoinPlayerName" type="LineEdit" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1726776769]
+[node name="JoinPlayerName" type="LineEdit" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1726776769]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Guest"
 
-[node name="Label2" type="Label" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1373107359]
+[node name="Label2" type="Label" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1373107359]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Room Code:"
 
-[node name="JoinRoomCode" type="LineEdit" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1666764825]
+[node name="JoinRoomCode" type="LineEdit" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1666764825]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Room Code"
 
-[node name="Spacer2" type="Control" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1514666925]
+[node name="Spacer2" type="Control" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1514666925]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="JoinBtn" type="Button" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1768553095 node_paths=PackedStringArray("ui")]
+[node name="JoinBtn" type="Button" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1768553095 node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 theme_override_font_sizes/font_size = 32
@@ -380,7 +326,7 @@ script = ExtResource("3_3dxm6")
 ui = NodePath("../../../../..")
 make_visible = false
 
-[node name="CloseBtn" type="Button" parent="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1437884117 node_paths=PackedStringArray("ui")]
+[node name="CloseBtn" type="Button" parent="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1437884117 node_paths=PackedStringArray("ui")]
 layout_mode = 2
 theme_type_variation = &"TitleButton"
 text = "- CLOSE -"
@@ -388,1152 +334,24 @@ script = ExtResource("3_3dxm6")
 ui = NodePath("../../../../..")
 make_visible = false
 
-[node name="DeckLibrary" type="PanelContainer" parent="." unique_id=835416293]
+[node name="DeckLibrary" parent="." unique_id=428810348 node_paths=PackedStringArray("DECK_EDITOR") instance=ExtResource("4_03owx")]
 visible = false
-z_index = 30
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_v8qla")
+DECK_EDITOR = NodePath("../DeckEditor")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckLibrary" unique_id=1217040144]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Separator" parent="DeckLibrary/VBoxContainer" unique_id=444231581 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="DeckLibrary/VBoxContainer" unique_id=1166069062]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Deck Library"
-horizontal_alignment = 1
-
-[node name="Separator2" parent="DeckLibrary/VBoxContainer" unique_id=1528233714 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="DeckLibrary/VBoxContainer" unique_id=1804591204]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_right = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer" unique_id=1408472639]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer" unique_id=532933122]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1585441828]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="DeckListingContainer" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=2103131431]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Separator" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1827429238 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=380891581]
-layout_mode = 2
-alignment = 1
-
-[node name="AddDeckBtn" type="Button" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=157370616]
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
-icon = ExtResource("5_jt61w")
-
-[node name="AddClipBtn" type="Button" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1585237037]
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
-icon = ExtResource("6_y1tbi")
-
-[node name="AddFileBtn" type="Button" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1399527775 node_paths=PackedStringArray("ui")]
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
-icon = ExtResource("8_wkp8b")
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../../../FileDialog")
-
-[node name="AddLinkBtn" type="Button" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=978553964]
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
-icon = ExtResource("7_03owx")
-
-[node name="FolderBtn" type="Button" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=609224898]
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
-icon = ExtResource("8_v8qla")
-
-[node name="VSeparator" type="VSeparator" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1210353670]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2100964057]
-custom_minimum_size = Vector2(258, 0)
-layout_mode = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="DeckList" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=110329618]
-unique_name_in_owner = true
+[node name="DeckEditor" parent="." unique_id=1727547133 instance=ExtResource("5_wkp8b")]
 visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=1826235456]
-layout_mode = 2
-text = "Main:"
-
-[node name="MainDeckList" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=398075880]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="Label2" type="Label" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=220014257]
-layout_mode = 2
-text = "Side:"
-
-[node name="SideDeckList" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=125167965]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="Label3" type="Label" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=362163082]
-layout_mode = 2
-text = "Sideboard:"
-
-[node name="SideboardList" type="VBoxContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=1370669923]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=170683131]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="WrongRulesetLabel" type="Label" parent="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/CenterContainer" unique_id=1220294731]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(234, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
-text = "This deck was made for another ruleset, and can't be loaded because of that. You can still edit it but make a backup first"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Separator3" parent="DeckLibrary/VBoxContainer" unique_id=1930006269 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="PopupBlocker" type="PanelContainer" parent="DeckLibrary" unique_id=807590868]
-visible = false
-z_index = 100
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckLibrary/PopupBlocker" unique_id=747114096]
-layout_mode = 2
-
-[node name="Popup" type="PanelContainer" parent="DeckLibrary/PopupBlocker/CenterContainer" unique_id=985347005]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
-theme_type_variation = &"ErrorPopup"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup" unique_id=863752967]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="Title" type="Label" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=1037401770]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Wrong ruleset"
-horizontal_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=1045779451]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="WrongWarninglabel" type="Label" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/CenterContainer" unique_id=551980378]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "This deck was created using %s, but you have %s loaded. Loading this deck could cause problems. If you still want to load and edit this deck, please make a backup"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=740508761]
-layout_mode = 2
-alignment = 1
-
-[node name="BkBtn" type="Button" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer" unique_id=1817197183]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Backup and load"
-
-[node name="LoadBtn" type="Button" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer" unique_id=2093189989]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Load anyway"
-
-[node name="CancelBtn" type="Button" parent="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=1040791906]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "cancel"
-
-[node name="FileDialog" type="FileDialog" parent="DeckLibrary" unique_id=1173502544]
-gui_embed_subwindows = true
-oversampling_override = 1.0
-title = "Open a File"
-initial_position = 1
-unresizable = true
-file_mode = 0
-display_mode = 1
-access = 2
-filters = PackedStringArray("*.json;Deck File")
-file_filter_toggle_enabled = false
-file_sort_options_enabled = false
-folder_creation_enabled = false
-favorites_enabled = false
-deleting_enabled = false
-
-[node name="DeckEditor" type="PanelContainer" parent="." unique_id=16940243]
-unique_name_in_owner = true
-visible = false
-z_index = 40
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_devvj")
 
-[node name="MarginContainer" type="MarginContainer" parent="DeckEditor" unique_id=1410081135]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer" unique_id=272316406]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer" unique_id=1003158263]
-custom_minimum_size = Vector2(470, 0)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer" unique_id=592251213]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2098430189]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="NameFilter" type="LineEdit" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=46375113]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Card Name Search"
-
-[node name="SigilFilter" type="LineEdit" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=869127676]
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Sigils Search (Separated by comma)"
-
-[node name="CostsFiltersContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=523281501]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
-theme_override_constants/separation = 8
-alignment = 1
-
-[node name="BloodFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=110324045 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("4_c6i3y")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "blood"
-deck_editor = NodePath("../../../../../..")
-
-[node name="BoneFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1493140811 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("5_c2ibq")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "bone"
-deck_editor = NodePath("../../../../../..")
-
-[node name="EnergyFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=456793542 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("6_c2ibq")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "energy"
-deck_editor = NodePath("../../../../../..")
-
-[node name="CellFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1939615499 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("8_3b0ty")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "cell"
-deck_editor = NodePath("../../../../../..")
-
-[node name="GreenFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1091672341 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("7_2gh4u")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "green"
-deck_editor = NodePath("../../../../../..")
-
-[node name="OrangeFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=277062931 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("8_devvj")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "orange"
-deck_editor = NodePath("../../../../../..")
-
-[node name="BlueFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=1931913275 node_paths=PackedStringArray("deck_editor")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-toggle_mode = true
-icon = ExtResource("9_3b0ty")
-icon_alignment = 1
-script = ExtResource("6_3b0ty")
-filter_name = "blue"
-deck_editor = NodePath("../../../../../..")
-
-[node name="AdvanceFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=2058799985 node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(19, 0)
-layout_mode = 2
-icon = ExtResource("14_3b0ty")
-icon_alignment = 1
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../../../FilterPopUp")
-
-[node name="ClearFilter" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer" unique_id=521356830]
-layout_mode = 2
-icon = ExtResource("15_1w2xm")
-
-[node name="Separator2" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer" unique_id=166688610 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer" unique_id=939624879]
-custom_minimum_size = Vector2(482, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1145432951]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="CardListLabel" type="Label" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CenterContainer" unique_id=445130567]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "No Card Available :("
-
-[node name="CardList" type="GridContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1932405109]
-unique_name_in_owner = true
-layout_mode = 2
-columns = 6
-
-[node name="CardContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2058315583 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer2" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=274574371 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer3" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=905198880 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer4" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1513279380 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer5" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=233809702 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer6" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1310010769 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer7" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=817259116 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer8" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=50551177 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer9" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1605726214 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer10" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1426830655 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer11" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1840495600 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer12" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1821032348 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer13" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2065049879 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer14" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1372683235 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer15" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1184638576 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer16" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2019255338 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer17" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=179157630 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer18" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1130646157 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer19" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=473864505 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer20" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1679802708 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer21" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1640441374 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer22" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1060220639 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer23" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1791626743 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer24" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2087127767 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer25" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=399150157 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer26" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=440188227 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer27" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=903909165 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer28" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1115584684 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer29" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1253770710 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer30" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=2018845611 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer31" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=1214658779 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="CardContainer32" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/CardList" unique_id=459454913 instance=ExtResource("15_bg4s2")]
-layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="DeckEditor/MarginContainer/HBoxContainer" unique_id=915306194]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_lgr22")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer" unique_id=1456911601]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1147663527]
-layout_mode = 2
-
-[node name="DeckBtn" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1426547492 node_paths=PackedStringArray("ui")]
-custom_minimum_size = Vector2(258, 28)
-layout_mode = 2
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../DeckPopup")
-
-[node name="VBoxContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn" unique_id=134128199]
+[node name="Lobby" parent="." unique_id=919799645 node_paths=PackedStringArray("FIGHT") instance=ExtResource("6_20pc6")]
+visible = false
 layout_mode = 0
-offset_right = 258.0
-offset_bottom = 28.0
+FIGHT = NodePath("../Fight")
 
-[node name="DeckIcon" type="TextureRect" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=654568367]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("15_mxvw5")
-stretch_mode = 5
-
-[node name="DeckName" type="Label" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=1284942030]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0.03137255, 0.08627451, 1)
-text = "Test Deck"
-clip_text = true
-text_overrun_behavior = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer" unique_id=498397007]
-layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="MainSizeLabel" type="RichTextLabel" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer/VBoxContainer" unique_id=1325680580]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/default_color = Color(0.06666667, 0.25882354, 0.45490196, 1)
-bbcode_enabled = true
-text = "Main: 112310/20+ Cards"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 2
-
-[node name="SideSizeLabel" type="Label" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckBtn/VBoxContainer/VBoxContainer" unique_id=1680060314]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.06666667, 0.25882354, 0.45490196, 1)
-text = "Side: 10/10 Cards"
-horizontal_alignment = 2
-
-[node name="Separator" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1677097896 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="DeckTabContainer" type="TabContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2077129608]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-tab_alignment = 1
-current_tab = 0
-
-[node name="Main" type="ScrollContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=135823428]
-layout_mode = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-metadata/_tab_index = 0
-
-[node name="MainDeckContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main" unique_id=252128413]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="Side" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=519805043]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_tab_index = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=198894971]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer" unique_id=1371746325]
-layout_mode = 2
-text = "Side Deck:"
-
-[node name="SideOption" type="OptionButton" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer" unique_id=1567669184]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-item_count = 2
-popup/item_0/text = "10 Squirrel"
-popup/item_0/id = 0
-popup/item_1/text = "Your mom"
-popup/item_1/id = 1
-
-[node name="CatOptContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=1375520086]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer" unique_id=1617956518]
-layout_mode = 2
-text = "Options:"
-
-[node name="CatOption" type="OptionButton" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer" unique_id=295773674]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side" unique_id=237836420]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-metadata/_tab_index = 0
-
-[node name="SideDeckContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer" unique_id=664795260]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="Sideboard" type="ScrollContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" unique_id=2100673086]
-visible = false
-layout_mode = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-metadata/_tab_index = 2
-
-[node name="SideboardContainer" type="VBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Sideboard" unique_id=141029383]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 2
-script = ExtResource("7_v8qla")
-
-[node name="Separator2" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1684664343 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=158943914]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer" unique_id=959091814]
-layout_mode = 2
-
-[node name="ExitBtn" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1388207781 node_paths=PackedStringArray("ui")]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Exit"
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../../..")
-make_visible = false
-
-[node name="SaveExitBtn" type="Button" parent="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=941797829]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Save & Exit"
-
-[node name="FilterPopUp" type="PanelContainer" parent="DeckEditor" unique_id=1479220613]
-visible = false
-z_index = 100
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckEditor/FilterPopUp" unique_id=584063193]
-layout_mode = 2
-
-[node name="Popup" type="PanelContainer" parent="DeckEditor/FilterPopUp/CenterContainer" unique_id=1243816613]
-custom_minimum_size = Vector2(600, 200)
-layout_mode = 2
-theme_type_variation = &"BasicPopup"
-
-[node name="Margin container" type="MarginContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup" unique_id=1048838474]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container" unique_id=1603324113]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer" unique_id=439309713]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/h_separation = 32
-theme_override_constants/v_separation = 0
-columns = 2
-
-[node name="RarityFilters" type="VBoxContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=491590407]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters" unique_id=1352142270]
-layout_mode = 2
-text = "Rarities:"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters" unique_id=1277779274]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="RarityFiltersContainer" type="GridContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer" unique_id=74169767]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="Button" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer/RarityFiltersContainer" unique_id=1061561468]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Rare"
-icon = ExtResource("17_hhcpw")
-
-[node name="Button2" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/RarityFilters/ScrollContainer/RarityFiltersContainer" unique_id=523269323]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Common"
-icon = ExtResource("17_oye8v")
-
-[node name="TraitFilters" type="VBoxContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=1950455304]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters" unique_id=1142570869]
-layout_mode = 2
-text = "Traits:"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters" unique_id=68026536]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="TraitFiltersContainer" type="GridContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer" unique_id=198382303]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="Button" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=1164720461]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Bloodless"
-icon = ExtResource("16_bg4s2")
-
-[node name="Button2" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=1663022952]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Boneless"
-icon = ExtResource("19_40n85")
-
-[node name="Button3" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TraitFilters/ScrollContainer/TraitFiltersContainer" unique_id=621663764]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Unhammerable"
-icon = ExtResource("20_gb15f")
-
-[node name="TempleFilters" type="VBoxContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=919932827]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters" unique_id=784709019]
-layout_mode = 2
-text = "Temples:"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters" unique_id=2084983496]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="TempleFiltersContainer" type="GridContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer" unique_id=29259384]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="Button" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=767749363]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Beast"
-icon = ExtResource("21_sph85")
-
-[node name="Button2" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=1745960382]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Undead"
-icon = ExtResource("22_o7g6l")
-
-[node name="Button4" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=165122889]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Technology
-"
-icon = ExtResource("23_vi5kq")
-
-[node name="Button3" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TempleFilters/ScrollContainer/TempleFiltersContainer" unique_id=1093885919]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Magick"
-icon = ExtResource("24_5mkgo")
-
-[node name="TribeFilters" type="VBoxContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer" unique_id=125833638]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters" unique_id=42719761]
-layout_mode = 2
-text = "Tribes:"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters" unique_id=1207262091]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="TribeFiltersContainer" type="GridContainer" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer" unique_id=360536669]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="Button" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1909704874]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Avian"
-icon = ExtResource("25_ny7u2")
-
-[node name="Button2" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1852303850]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Canine"
-icon = ExtResource("26_x3yn0")
-
-[node name="Button5" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1991195924]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Hooved"
-icon = ExtResource("29_jt61w")
-
-[node name="Button6" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1908870480]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Insect"
-icon = ExtResource("30_v8qla")
-
-[node name="Button8" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=520838444]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Reptile"
-icon = ExtResource("32_c2s76")
-
-[node name="Button3" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=71687465]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Crustacean"
-icon = ExtResource("27_1w2xm")
-
-[node name="Button7" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1761823837]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Piscine"
-icon = ExtResource("31_y1tbi")
-
-[node name="Button4" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer/GridContainer/TribeFilters/ScrollContainer/TribeFiltersContainer" unique_id=1507555638]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Gems"
-icon = ExtResource("28_gngx1")
-
-[node name="ExitBtn" type="Button" parent="DeckEditor/FilterPopUp/CenterContainer/Popup/Margin container/VBoxContainer" unique_id=1468428054 node_paths=PackedStringArray("ui")]
-layout_mode = 2
-text = "Done"
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../..")
-make_visible = false
-
-[node name="DeckPopup" type="PanelContainer" parent="DeckEditor" unique_id=1276254243]
-visible = false
-z_index = 100
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
-
-[node name="CenterContainer" type="CenterContainer" parent="DeckEditor/DeckPopup" unique_id=1638782278]
-layout_mode = 2
-
-[node name="Popup" type="PanelContainer" parent="DeckEditor/DeckPopup/CenterContainer" unique_id=1897964443]
-custom_minimum_size = Vector2(486, 200)
-layout_mode = 2
-theme_type_variation = &"BasicPopup"
-
-[node name="MarginContainer" type="MarginContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup" unique_id=1446465031]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer" unique_id=1269775237]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=1943638425]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2045654192]
-layout_mode = 2
-text = "Deck Name:"
-
-[node name="DeckNameEdit" type="LineEdit" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1860984328]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=517688664]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_jt61w")
-
-[node name="MarginContainer" type="MarginContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer" unique_id=73976930]
-layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=946488420]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="DeckIconContainer" type="FlowContainer" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=307610725]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Button" type="Button" parent="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer" unique_id=1301762894 node_paths=PackedStringArray("ui")]
-layout_mode = 2
-text = "Done"
-script = ExtResource("3_3dxm6")
-ui = NodePath("../../../../..")
-make_visible = false
-
-[node name="Lobby" type="PanelContainer" parent="." unique_id=282932011]
-unique_name_in_owner = true
-visible = false
-z_index = 50
-layout_mode = 0
-offset_right = 768.0
-offset_bottom = 432.0
-script = ExtResource("3_fos0i")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Lobby" unique_id=2015116046]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="CenterContainer" type="CenterContainer" parent="Lobby/VBoxContainer" unique_id=281031030]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Lobby/VBoxContainer/CenterContainer" unique_id=2036739656]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Lobby/VBoxContainer/CenterContainer/HBoxContainer" unique_id=899450724]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Room Code:"
-
-[node name="RoomCode" type="Button" parent="Lobby/VBoxContainer/CenterContainer/HBoxContainer" unique_id=2124227144]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(126, 30)
-layout_mode = 2
-tooltip_text = "Click Again to hide"
-theme_override_font_sizes/font_size = 32
-text = "VIEW CODE"
-
-[node name="CopyCodeBtn" type="Button" parent="Lobby/VBoxContainer/CenterContainer/HBoxContainer" unique_id=908981591]
-layout_mode = 2
-tooltip_text = "Click Again to hide"
-theme_override_font_sizes/font_size = 32
-text = "COPY"
-
-[node name="Separator" parent="Lobby/VBoxContainer" unique_id=870235217 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Lobby/VBoxContainer" unique_id=1029557100]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="PlayerList" type="VBoxContainer" parent="Lobby/VBoxContainer/HBoxContainer" unique_id=1992443950]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="Lobby/VBoxContainer/HBoxContainer/PlayerList" unique_id=1436041638]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "----- PLAYERS -----"
-horizontal_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Lobby/VBoxContainer/HBoxContainer" unique_id=461634684]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_lgr22")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Lobby/VBoxContainer/HBoxContainer" unique_id=746174034]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="Lobby/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=244107704]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "---- SETTINGS ----"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Lobby/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=346309670]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="Lobby/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=78746810]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Deck:"
-
-[node name="DeckOption" type="OptionButton" parent="Lobby/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1830039268]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Separator2" parent="Lobby/VBoxContainer" unique_id=1418192561 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="StartBtn" type="Button" parent="Lobby/VBoxContainer" unique_id=771200911]
-layout_mode = 2
-theme_type_variation = &"TitleButton"
-theme_override_font_sizes/font_size = 32
-text = "- START MATCH -"
-
-[node name="EndBtn" type="Button" parent="Lobby/VBoxContainer" unique_id=2121176346]
-layout_mode = 2
-theme_type_variation = &"TitleButton"
-theme_override_font_sizes/font_size = 32
-text = "- EXIT LOBBY -"
-
-[node name="RulesetSelector" type="PanelContainer" parent="." unique_id=651548178]
-z_index = 60
+[node name="RulesetSelector" parent="." unique_id=449025582 instance=ExtResource("7_5vvyt")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_20pc6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="RulesetSelector" unique_id=906372938]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Separator" parent="RulesetSelector/VBoxContainer" unique_id=325415448 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="RulesetSelector/VBoxContainer" unique_id=1453551659]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "RULESET SELECTOR"
-horizontal_alignment = 1
-
-[node name="Separator2" parent="RulesetSelector/VBoxContainer" unique_id=908175907 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="RulesetSelector/VBoxContainer" unique_id=773156731]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="RulesetSelector/VBoxContainer/CenterContainer" unique_id=600822374]
-layout_mode = 2
-
-[node name="RulesetList" type="HBoxContainer" parent="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1179726853]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="AddBtn" type="HBoxContainer" parent="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer" unique_id=523865785]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="AddLinkBtn" parent="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn" unique_id=775333343 instance=ExtResource("6_wkp8b")]
-layout_mode = 2
-icon = ExtResource("7_03owx")
-ruleset_name = "Add URL"
-description = "Add new ruleset using url"
-
-[node name="AddFileBtn" parent="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn" unique_id=1524599786 instance=ExtResource("6_wkp8b")]
-layout_mode = 2
-icon = ExtResource("8_wkp8b")
-ruleset_name = "Add File"
-description = "Add new ruleset using file"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="RulesetSelector/VBoxContainer" unique_id=722773537]
-layout_mode = 2
-
-[node name="Separator" parent="RulesetSelector/VBoxContainer/HBoxContainer" unique_id=1790949425 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="RulesetName" type="Label" parent="RulesetSelector/VBoxContainer/HBoxContainer" unique_id=74832065]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
-
-[node name="Separator2" parent="RulesetSelector/VBoxContainer/HBoxContainer" unique_id=819917802 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="RulesetSelector/VBoxContainer" unique_id=1362978030]
-custom_minimum_size = Vector2(0, 113)
-layout_mode = 2
-
-[node name="RulesetDescription" type="Label" parent="RulesetSelector/VBoxContainer/ScrollContainer" unique_id=375451257]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 113)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
-autowrap_mode = 2
-text_overrun_behavior = 6
-
-[node name="Separator3" parent="RulesetSelector/VBoxContainer" unique_id=1012685557 instance=ExtResource("2_3dxm6")]
-layout_mode = 2
-
-[node name="HTTPRequest" type="HTTPRequest" parent="RulesetSelector" unique_id=1309540293]
 
 [node name="Fight" parent="." unique_id=1032969089 instance=ExtResource("1_glv2v")]
-unique_name_in_owner = true
 visible = false
 z_index = 70
 layout_mode = 1
@@ -1587,30 +405,6 @@ size_flags_horizontal = 4
 text = "Close"
 
 [connection signal="pressed" from="TitleScreen/VBoxContainer/QuitBtn" to="TitleScreen" method="_on_quit_btn_pressed"]
-[connection signal="pressed" from="HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HostBtn" to="TitleScreen" method="_on_host_btn_pressed"]
-[connection signal="pressed" from="JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/JoinBtn" to="TitleScreen" method="_on_join_btn_pressed"]
-[connection signal="pressed" from="DeckLibrary/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AddDeckBtn" to="DeckLibrary" method="_on_add_deck_btn_pressed"]
-[connection signal="pressed" from="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer/BkBtn" to="DeckLibrary" method="_on_bk_btn_pressed"]
-[connection signal="pressed" from="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer/LoadBtn" to="DeckLibrary" method="_on_load_btn_pressed"]
-[connection signal="pressed" from="DeckLibrary/PopupBlocker/CenterContainer/Popup/VBoxContainer/CancelBtn" to="DeckLibrary" method="_on_cancel_btn_pressed"]
-[connection signal="file_selected" from="DeckLibrary/FileDialog" to="DeckLibrary" method="_on_file_selected"]
-[connection signal="text_changed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NameFilter" to="DeckEditor" method="_on_name_filter_text_changed"]
-[connection signal="pressed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/CostsFiltersContainer/ClearFilter" to="DeckEditor" method="_on_clear_filter_pressed"]
-[connection signal="tab_changed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer" to="DeckEditor" method="_on_tab_container_tab_changed"]
-[connection signal="on_card_added" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main/MainDeckContainer" to="DeckEditor" method="_update_card_count"]
-[connection signal="on_card_removed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Main/MainDeckContainer" to="DeckEditor" method="_update_card_count"]
-[connection signal="item_selected" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/HBoxContainer/SideOption" to="DeckEditor" method="_on_side_option_item_selected"]
-[connection signal="item_selected" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/CatOptContainer/CatOption" to="DeckEditor" method="_on_cat_option_item_selected"]
-[connection signal="on_card_added" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer/SideDeckContainer" to="DeckEditor" method="_update_card_count"]
-[connection signal="on_card_removed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/DeckTabContainer/Side/ScrollContainer/SideDeckContainer" to="DeckEditor" method="_update_card_count"]
-[connection signal="pressed" from="DeckEditor/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer/SaveExitBtn" to="DeckEditor" method="_on_save_exit_btn_pressed"]
-[connection signal="text_changed" from="DeckEditor/DeckPopup/CenterContainer/Popup/MarginContainer/VBoxContainer/HBoxContainer/DeckNameEdit" to="DeckEditor" method="_on_deck_name_changed"]
-[connection signal="pressed" from="Lobby/VBoxContainer/CenterContainer/HBoxContainer/RoomCode" to="Lobby" method="_on_room_code_pressed"]
-[connection signal="pressed" from="Lobby/VBoxContainer/CenterContainer/HBoxContainer/CopyCodeBtn" to="Lobby" method="_on_copy_code_btn_pressed"]
-[connection signal="pressed" from="Lobby/VBoxContainer/StartBtn" to="Lobby" method="_on_start_btn_pressed"]
-[connection signal="pressed" from="Lobby/VBoxContainer/EndBtn" to="Lobby" method="_on_end_btn_pressed"]
-[connection signal="horvered" from="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddLinkBtn" to="RulesetSelector" method="_on_button_horvered"]
-[connection signal="mouse_exited" from="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddLinkBtn" to="RulesetSelector" method="_on_button_unhorvered"]
-[connection signal="horvered" from="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddFileBtn" to="RulesetSelector" method="_on_button_horvered"]
-[connection signal="mouse_exited" from="RulesetSelector/VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddFileBtn" to="RulesetSelector" method="_on_button_unhorvered"]
+[connection signal="pressed" from="TitleScreen/HostSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HostBtn" to="TitleScreen" method="_on_host_btn_pressed"]
+[connection signal="pressed" from="TitleScreen/JoinSetting/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/JoinBtn" to="TitleScreen" method="_on_join_btn_pressed"]
 [connection signal="pressed" from="PopupBlocker/CenterContainer/Popup/VBoxContainer/ClosePopupBtn" to="PopupBlocker" method="_on_button_pressed"]

@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://cd0ws8cysmijs"]
+
+[ext_resource type="Script" uid="uid://dk8xql1dsosn8" path="res://packed/deck_library/deck_library.gd" id="1_i8dw4"]
+[ext_resource type="PackedScene" uid="uid://dwhmym7riy2eo" path="res://prefab/separator.tscn" id="2_77xgr"]
+[ext_resource type="Texture2D" uid="uid://beioiqusnxhs3" path="res://asset/ruleset_icon/plus.png" id="3_0f3h0"]
+[ext_resource type="Texture2D" uid="uid://dooq4so256ueh" path="res://asset/ruleset_icon/clipboard.png" id="4_k8i4a"]
+[ext_resource type="Texture2D" uid="uid://du2ktv20mkxyp" path="res://asset/ruleset_icon/file.png" id="5_4qqor"]
+[ext_resource type="Script" uid="uid://ccuyd8bprftvj" path="res://scripts/utils/ui_control_btn.gd" id="6_u1fnd"]
+[ext_resource type="Texture2D" uid="uid://bgh3egaw8r84q" path="res://asset/ruleset_icon/link.png" id="7_e4ns7"]
+[ext_resource type="Texture2D" uid="uid://uyxl8k3j8l8a" path="res://asset/ruleset_icon/folder.png" id="8_rgsmw"]
+[ext_resource type="Script" uid="uid://b3mqoebomfdgf" path="res://scripts/utils/deck_list.gd" id="9_4l0cs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
+bg_color = Color(0, 0, 0, 0.27450982)
+
+[node name="DeckLibrary" type="PanelContainer" unique_id=428810348]
+z_index = 30
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8dw4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1293924152]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Separator" parent="VBoxContainer" unique_id=444231581 instance=ExtResource("2_77xgr")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1948926342]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Deck Library"
+horizontal_alignment = 1
+
+[node name="Separator2" parent="VBoxContainer" unique_id=340417688 instance=ExtResource("2_77xgr")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=2016511931]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1286731123]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=244121607]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=948182207]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="DeckListingContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1768664852]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Separator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=200481593 instance=ExtResource("2_77xgr")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2089991567]
+layout_mode = 2
+alignment = 1
+
+[node name="AddDeckBtn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1691292506]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
+icon = ExtResource("3_0f3h0")
+
+[node name="AddClipBtn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1285584917]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
+icon = ExtResource("4_k8i4a")
+
+[node name="AddFileBtn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=666399882 node_paths=PackedStringArray("ui")]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
+icon = ExtResource("5_4qqor")
+script = ExtResource("6_u1fnd")
+ui = NodePath("../../../../../../FileDialog")
+
+[node name="AddLinkBtn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1168574701]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
+icon = ExtResource("7_e4ns7")
+
+[node name="FolderBtn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=886507194]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0.03137255, 0.08627451, 1)
+icon = ExtResource("8_rgsmw")
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=336513617]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=865773541]
+custom_minimum_size = Vector2(258, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="DeckList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=846014885]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MainDeckTitle" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=714047754]
+layout_mode = 2
+text = "Main:"
+
+[node name="MainDeckList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=1414809765]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("9_4l0cs")
+
+[node name="SideDeckTitle" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=725301444]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Side:"
+
+[node name="SideDeckList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=1437704338]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("9_4l0cs")
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=1836908047]
+layout_mode = 2
+text = "Sideboard:"
+
+[node name="SideboardList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/DeckList" unique_id=94184755]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("9_4l0cs")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=78476661]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WrongRulesetLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/CenterContainer" unique_id=808952461]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(234, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
+text = "This deck was made for another ruleset, and can't be loaded because of that. You can still edit it but make a backup first"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Separator3" parent="VBoxContainer" unique_id=54380871 instance=ExtResource("2_77xgr")]
+layout_mode = 2
+
+[node name="PopupBlocker" type="PanelContainer" parent="." unique_id=382496074]
+visible = false
+z_index = 100
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupBlocker" unique_id=931064611]
+layout_mode = 2
+
+[node name="Popup" type="PanelContainer" parent="PopupBlocker/CenterContainer" unique_id=1889596250]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_type_variation = &"ErrorPopup"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupBlocker/CenterContainer/Popup" unique_id=2005729135]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=2110055199]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Wrong ruleset"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=892129112]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WrongWarninglabel" type="Label" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer/CenterContainer" unique_id=105525630]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "This deck was created using %s, but you have %s loaded. Loading this deck could cause problems. If you still want to load and edit this deck, please make a backup"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=176535355]
+layout_mode = 2
+alignment = 1
+
+[node name="BkBtn" type="Button" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer" unique_id=750517723]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Backup and load"
+
+[node name="LoadBtn" type="Button" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer" unique_id=572671024]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Load anyway"
+
+[node name="CancelBtn" type="Button" parent="PopupBlocker/CenterContainer/Popup/VBoxContainer" unique_id=1991097420]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "cancel"
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1707927152]
+gui_embed_subwindows = true
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+unresizable = true
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.json;Deck File")
+file_filter_toggle_enabled = false
+file_sort_options_enabled = false
+folder_creation_enabled = false
+favorites_enabled = false
+deleting_enabled = false
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AddDeckBtn" to="." method="_on_add_deck_btn_pressed"]
+[connection signal="pressed" from="PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer/BkBtn" to="." method="_on_bk_btn_pressed"]
+[connection signal="pressed" from="PopupBlocker/CenterContainer/Popup/VBoxContainer/HBoxContainer/LoadBtn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="PopupBlocker/CenterContainer/Popup/VBoxContainer/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]

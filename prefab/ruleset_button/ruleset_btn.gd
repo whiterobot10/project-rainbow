@@ -5,7 +5,7 @@ signal horvered(name: String, description: String)
 signal selected(button: _ruleset_selector.RulesetIcon)
 
 #gdlint: ignore=load-constant-name
-const _ruleset_selector := preload("res://scripts/ruleset_selector.gd")
+const _ruleset_selector := preload("res://packed/ruleset_selector/ruleset_selector.gd")
 
 @export var ruleset_name: String
 @export var url: String

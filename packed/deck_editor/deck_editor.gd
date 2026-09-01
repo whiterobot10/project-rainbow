@@ -15,6 +15,8 @@ var category_options: Array[Ruleset.SideDeck] = []
 var selected_category_name := ""
 var selected_side_deck: Ruleset.SideDeck
 
+var have_side_deck := true
+
 const DECK_SCHEMA: Dictionary[String, Dictionary] = {
 	name = {types = [TYPE_STRING], default = "New Decl"},
 	ruleset = {types = [TYPE_STRING], default = "Missing Ruleset"},
@@ -90,26 +92,27 @@ func load_deck(json: Dictionary) -> void:
 	var dict: Dictionary[String, int]
 	dict.assign(json.main as Dictionary)
 	main_deck.load_deck(dict)
-	var raw_side: Variant = Global.ruleset.side_decks.get(json.side.name, null)
-	var idx := side_deck_options.find(raw_side)
-	if idx == -1:
-		idx = 0
-	%SideOption.select(idx)
-	_on_side_option_item_selected(idx)
-	if raw_side is Ruleset.SideDeckCategory:
-		idx = category_options.find(raw_side.decks[json.side.category])
+	if have_side_deck:
+		var raw_side: Variant = Global.ruleset.side_decks.get(json.side.name, null)
+		var idx := side_deck_options.find(raw_side)
 		if idx == -1:
 			idx = 0
-		%CatOption.select(idx)
-		_on_cat_option_item_selected(idx)
-	if selected_side_deck.type == Ruleset.SideDeck.Type.DRAFT:
-		dict.assign(json.side.get("deck", {}) as Dictionary)
-		for card_name: String in dict.keys():
-			if card_name not in selected_side_deck.cards:
-				dict.erase(card_name)
-		side_deck.load_deck(dict)
-	dict.assign(json.sideboard as Dictionary)
-	sideboard_deck.load_deck(dict)
+		%SideOption.select(idx)
+		_on_side_option_item_selected(idx)
+		if raw_side is Ruleset.SideDeckCategory:
+			idx = category_options.find(raw_side.decks[json.side.category])
+			if idx == -1:
+				idx = 0
+			%CatOption.select(idx)
+			_on_cat_option_item_selected(idx)
+		if selected_side_deck.type == Ruleset.SideDeck.Type.DRAFT:
+			dict.assign(json.side.get("deck", {}) as Dictionary)
+			for card_name: String in dict.keys():
+				if card_name not in selected_side_deck.cards:
+					dict.erase(card_name)
+			side_deck.load_deck(dict)
+		dict.assign(json.sideboard as Dictionary)
+		sideboard_deck.load_deck(dict)
 	_on_tab_container_tab_changed(0)
 	_update_card_count()
 	_update_card_list()
@@ -123,18 +126,21 @@ func _ruleset_changed(ruleset: Ruleset) -> void:
 		db_card.is_db_card = true
 		db_card.pressed.connect(_on_card_selected.bind(db_card))
 		%CardList.add_child(db_card)
-
 	_update_card_list()
-
 	_update_filters_ui(ruleset)
 
-	%SideOption.clear()
-	for deck: Variant in ruleset.side_decks.values():
-		%SideOption.add_item(deck.display_name)
-		side_deck_options.append(deck)
-	selected_deck = side_deck
-	_on_side_option_item_selected(0)
-	%DeckTabContainer.tab_changed.emit(0)
+	if ruleset.side_decks.is_empty():
+		have_side_deck = false
+		%DeckTabContainer.set_tab_disabled(1, true)
+		%SideSizeLabel.visible = false
+	else:
+		%SideOption.clear()
+		for deck: Variant in ruleset.side_decks.values():
+			%SideOption.add_item(deck.display_name)
+			side_deck_options.append(deck)
+		selected_deck = side_deck
+		_on_side_option_item_selected(0)
+		%DeckTabContainer.tab_changed.emit(0)
 
 
 func _update_card_list() -> void:
@@ -211,11 +217,12 @@ func _update_card_count() -> void:
 			main_size_min
 		]
 	)
-	%SideSizeLabel.text = (
-		("Side: %s/%s Cards" % [side_size, selected_side_deck.max_size])
-		if selected_side_deck.type == Ruleset.SideDeck.Type.DRAFT
-		else ("Side: %s Cards" % side_size)
-	)
+	if have_side_deck:
+		%SideSizeLabel.text = (
+			("Side: %s/%s Cards" % [side_size, selected_side_deck.max_size])
+			if selected_side_deck.type == Ruleset.SideDeck.Type.DRAFT
+			else ("Side: %s Cards" % side_size)
+		)
 
 
 func update_filters() -> void:
@@ -383,17 +390,20 @@ func _on_save_exit_btn_pressed() -> void:
 		main = main_deck.deck,
 		sideboard = sideboard_deck.deck
 	}
-	var side := {name = selected_side_deck.name}
-	match selected_side_deck.type:
-		Ruleset.SideDeck.Type.CONSTRUCTED:
-			pass
-		Ruleset.SideDeck.Type.DRAFT:
-			side.deck = side_deck.deck
-		_:
-			push_warning("This side deck type does not support saving")
-	if not selected_category_name.is_empty():
-		side.name = selected_category_name
-		side.category = selected_side_deck.name
+	var side := {}
+
+	if have_side_deck:
+		side = {name = selected_side_deck.name}
+		match selected_side_deck.type:
+			Ruleset.SideDeck.Type.CONSTRUCTED:
+				pass
+			Ruleset.SideDeck.Type.DRAFT:
+				side.deck = side_deck.deck
+			_:
+				push_warning("This side deck type does not support saving")
+		if not selected_category_name.is_empty():
+			side.name = selected_category_name
+			side.category = selected_side_deck.name
 	deck_json.side = side
 	var file := FileAccess.open(
 		Global.decks_path.path_join("%s.json" % %DeckName.text), FileAccess.WRITE

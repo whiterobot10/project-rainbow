@@ -47,6 +47,13 @@ class Costs:
 			var m := Mox.new()
 			m.blue = amount
 			return m
+			
+		static func gob(green_amount := 1, orange_amount := 1, blue_amount := 1) -> Mox:
+			var m := Mox.new()
+			m.green = green_amount
+			m.orange = orange_amount
+			m.blue = blue_amount
+			return m
 
 	var blood: int = 0
 	var bone: int = 0

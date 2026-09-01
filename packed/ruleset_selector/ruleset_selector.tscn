@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://y0g15l7gvt46"]
+
+[ext_resource type="Script" uid="uid://b1j7bkidwk511" path="res://packed/ruleset_selector/ruleset_selector.gd" id="1_v7r41"]
+[ext_resource type="PackedScene" uid="uid://dwhmym7riy2eo" path="res://prefab/separator.tscn" id="2_onyn0"]
+[ext_resource type="PackedScene" uid="uid://c8sxetevgdvyk" path="res://prefab/ruleset_button/ruleset_btn.tscn" id="3_nfnlq"]
+[ext_resource type="Texture2D" uid="uid://bgh3egaw8r84q" path="res://asset/ruleset_icon/link.png" id="4_45r81"]
+[ext_resource type="Texture2D" uid="uid://du2ktv20mkxyp" path="res://asset/ruleset_icon/file.png" id="5_4a7jn"]
+
+[node name="RulesetSelector" type="PanelContainer" unique_id=449025582]
+z_index = 60
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7r41")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1379670475]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Separator" parent="VBoxContainer" unique_id=444231581 instance=ExtResource("2_onyn0")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1690969273]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "RULESET SELECTOR"
+horizontal_alignment = 1
+
+[node name="Separator2" parent="VBoxContainer" unique_id=142028094 instance=ExtResource("2_onyn0")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=732070683]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer" unique_id=1229958098]
+layout_mode = 2
+
+[node name="RulesetList" type="HBoxContainer" parent="VBoxContainer/CenterContainer/VBoxContainer" unique_id=508518169]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AddBtn" type="HBoxContainer" parent="VBoxContainer/CenterContainer/VBoxContainer" unique_id=208614978]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AddLinkBtn" parent="VBoxContainer/CenterContainer/VBoxContainer/AddBtn" unique_id=298796156 instance=ExtResource("3_nfnlq")]
+layout_mode = 2
+icon = ExtResource("4_45r81")
+ruleset_name = "Add URL"
+description = "Add new ruleset using url"
+
+[node name="AddFileBtn" parent="VBoxContainer/CenterContainer/VBoxContainer/AddBtn" unique_id=228649938 instance=ExtResource("3_nfnlq")]
+layout_mode = 2
+icon = ExtResource("5_4a7jn")
+ruleset_name = "Add File"
+description = "Add new ruleset using file"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=388256559]
+layout_mode = 2
+
+[node name="Separator" parent="VBoxContainer/HBoxContainer" unique_id=487748241 instance=ExtResource("2_onyn0")]
+layout_mode = 2
+
+[node name="RulesetName" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1914130661]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="Separator2" parent="VBoxContainer/HBoxContainer" unique_id=761127886 instance=ExtResource("2_onyn0")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=212987759]
+custom_minimum_size = Vector2(0, 113)
+layout_mode = 2
+
+[node name="RulesetDescription" type="Label" parent="VBoxContainer/ScrollContainer" unique_id=933395727]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 113)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9372549, 0.9647059, 0.78039217, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 6
+
+[node name="Separator3" parent="VBoxContainer" unique_id=35885605 instance=ExtResource("2_onyn0")]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1539314974]
+
+[connection signal="horvered" from="VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddLinkBtn" to="." method="_on_button_horvered"]
+[connection signal="mouse_exited" from="VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddLinkBtn" to="." method="_on_button_unhorvered"]
+[connection signal="horvered" from="VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddFileBtn" to="." method="_on_button_horvered"]
+[connection signal="mouse_exited" from="VBoxContainer/CenterContainer/VBoxContainer/AddBtn/AddFileBtn" to="." method="_on_button_unhorvered"]

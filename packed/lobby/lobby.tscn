@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://djxumpgf7u3uj"]
+
+[ext_resource type="Script" uid="uid://cqunm02g4d8jj" path="res://packed/lobby/lobby.gd" id="1_wvlbr"]
+[ext_resource type="PackedScene" uid="uid://dwhmym7riy2eo" path="res://prefab/separator.tscn" id="2_7ilho"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lgr22"]
+color = Color(0.12941177, 0.47843137, 0.84705883, 1)
+thickness = 2
+vertical = true
+
+[node name="Lobby" type="PanelContainer" unique_id=919799645]
+z_index = 50
+offset_right = 768.0
+offset_bottom = 432.0
+script = ExtResource("1_wvlbr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1351464180]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1465767405]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer" unique_id=1247185706]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=1586563277]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Room Code:"
+
+[node name="RoomCode" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=804786296]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(126, 30)
+layout_mode = 2
+tooltip_text = "Click Again to hide"
+theme_override_font_sizes/font_size = 32
+text = "VIEW CODE"
+
+[node name="CopyCodeBtn" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer" unique_id=280929450]
+layout_mode = 2
+tooltip_text = "Click Again to hide"
+theme_override_font_sizes/font_size = 32
+text = "COPY"
+
+[node name="Separator" parent="VBoxContainer" unique_id=444231581 instance=ExtResource("2_7ilho")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1607994558]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerList" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=720708595]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/PlayerList" unique_id=831578345]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "----- PLAYERS -----"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1392892640]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_lgr22")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1255209149]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1972287476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "---- SETTINGS ----"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=358901045]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1478496708]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Deck:"
+
+[node name="DeckOption" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=2117698861]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Separator2" parent="VBoxContainer" unique_id=1529245970 instance=ExtResource("2_7ilho")]
+layout_mode = 2
+
+[node name="StartBtn" type="Button" parent="VBoxContainer" unique_id=2024310626]
+layout_mode = 2
+theme_type_variation = &"TitleButton"
+theme_override_font_sizes/font_size = 32
+text = "- START MATCH -"
+
+[node name="EndBtn" type="Button" parent="VBoxContainer" unique_id=283667596]
+layout_mode = 2
+theme_type_variation = &"TitleButton"
+theme_override_font_sizes/font_size = 32
+text = "- EXIT LOBBY -"
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer/HBoxContainer/RoomCode" to="." method="_on_room_code_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/HBoxContainer/CopyCodeBtn" to="." method="_on_copy_code_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/EndBtn" to="." method="_on_end_btn_pressed"]

@@ -1,7 +1,16 @@
 extends Sigil
 
+
 func energy_cost() -> int:
 	return get_config("stimulate_energy_cost", 3)
+
+
+func attack_buff() -> int:
+	return get_config("stimulate_attack_buff", 1)
+
+
+func health_buff() -> int:
+	return get_config("stimulate_health_buff", 1)
 
 
 func is_active_sigil() -> bool:
@@ -17,7 +26,6 @@ func on_sigil_activate(
 ) -> void:
 	if card != attached_card or sigil != self:
 		return
-		
+
 	add_action(ChangeEnergyAction.new(-energy_cost(), controller_id()))
-	change_stats(attached_card.id, 1, 0)
-	
+	change_stats(attached_card.id, attack_buff(), health_buff())

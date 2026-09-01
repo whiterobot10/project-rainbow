@@ -560,13 +560,6 @@ func _init(ruleset: Dictionary) -> void:
 	for card_name: String in (ruleset.cards as Dictionary).keys():
 		cards[card_name] = CardData.new(ruleset.cards[card_name] as Dictionary)
 
-	if ruleset.side_decks.is_empty():
-		ruleset.side_decks["none"] = {
-			"card": cards.keys()[0],
-			"count": 0.0,
-			"type": "single"
-		}
-
 	for side_deck_name: String in (ruleset.side_decks as Dictionary).keys():
 		var data := ruleset.side_decks[side_deck_name] as Dictionary
 		if data.type == "category":

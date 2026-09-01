@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@export var FIGHT: Control
+
 var code: String
 var players: Dictionary[String, ConnectionManager.Player]
 var host_uuid: String
@@ -31,7 +33,7 @@ func add_player(player: ConnectionManager.Player) -> void:
 
 
 func _on_room_created(room_code: String) -> void:
-	%Lobby.code = room_code
+	code = room_code
 	Global.is_host = true
 	host_uuid = Global.uuid
 	add_player(ConnectionManager.Player.new(Global.player_name, Global.pfp, Global.uuid))
@@ -50,7 +52,7 @@ func _on_room_closed() -> void:
 	for n in %PlayerList.get_children():
 		%PlayerList.remove_child(n)
 		n.queue_free()
-	%Lobby.visible = false
+	visible = false
 
 
 func _on_player_joined(player: ConnectionManager.Player) -> void:
@@ -91,10 +93,10 @@ func _on_start_btn_pressed() -> void:
 		var starting_player := 0
 		ConnectionManager.send(ConnectionManager.GameMessage.START_GAME, {start = starting_player})
 		visible = false
-		%Fight.is_active = starting_player == 0
+		FIGHT.is_active = starting_player == 0
 		# HACK: Janky rn fix it when spectator or multiple player is implemented
-		%Fight.opp_id = players.keys().filter(func(s: String) -> bool: return s != Global.uuid)[0]
-		%Fight._start_fight(deck_options[%DeckOption.get_selected_id()])
+		FIGHT.opp_id = players.keys().filter(func(s: String) -> bool: return s != Global.uuid)[0]
+		FIGHT._start_fight(deck_options[%DeckOption.get_selected_id()])
 
 
 func _on_packet_recieved(packet: Dictionary) -> void:
@@ -102,11 +104,11 @@ func _on_packet_recieved(packet: Dictionary) -> void:
 		return
 
 	visible = false
-	%Fight.is_active = 1 - packet.start == 0
+	FIGHT.is_active = 1 - packet.start == 0
 	# HACK: Janky rn fix it when spectator or multiple player is implemented
-	%Fight.opp_id = players.keys().filter(func(s: String) -> bool: return s != Global.uuid)[0]
+	FIGHT.opp_id = players.keys().filter(func(s: String) -> bool: return s != Global.uuid)[0]
 
-	%Fight._start_fight(deck_options[%DeckOption.get_selected_id()])
+	FIGHT._start_fight(deck_options[%DeckOption.get_selected_id()])
 
 
 func _load_deck_option() -> void:

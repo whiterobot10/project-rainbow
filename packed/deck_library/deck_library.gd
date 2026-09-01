@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@export var DECK_EDITOR: Control
+
 var deck_listing := preload("res://prefab/deck_listing/deck_listing.tscn")
 var selected_listing: DeckListing
 
@@ -45,21 +47,27 @@ func _add_deck(deck_dict: Dictionary) -> void:
 		listing.wrong_ruleset = true
 	else:
 		listing.main.assign(deck_dict.main as Dictionary)
-		var raw_side: Variant = Global.ruleset.side_decks.get(deck_dict.side.name, null)
-		if raw_side == null:
-			raw_side = Global.ruleset.side_decks.values()[0]
-		var side_deck: Ruleset.SideDeck
-		if raw_side is Ruleset.SideDeckCategory:
-			side_deck = (raw_side as Ruleset.SideDeckCategory).decks[deck_dict.side.category]
+		if Global.ruleset.side_decks.is_empty():
+			%SideDeckTitle.visible = false
+			%SideDeckList.visible = false
 		else:
-			side_deck = raw_side
-		match side_deck.type:
-			Ruleset.SideDeck.Type.CONSTRUCTED:
-				listing.side.assign(side_deck.get_frequency())
-			Ruleset.SideDeck.Type.DRAFT:
-				listing.side.assign(deck_dict.side.deck as Dictionary)
-				listing.is_side_draft = true
-				listing.side_max = side_deck.max_size
+			%SideDeckTitle.visible = true
+			%SideDeckList.visible = true
+			var raw_side: Variant = Global.ruleset.side_decks.get(deck_dict.side.name, null)
+			if raw_side == null:
+				raw_side = Global.ruleset.side_decks.values()[0]
+			var side_deck: Ruleset.SideDeck
+			if raw_side is Ruleset.SideDeckCategory:
+				side_deck = (raw_side as Ruleset.SideDeckCategory).decks[deck_dict.side.category]
+			else:
+				side_deck = raw_side
+			match side_deck.type:
+				Ruleset.SideDeck.Type.CONSTRUCTED:
+					listing.side.assign(side_deck.get_frequency())
+				Ruleset.SideDeck.Type.DRAFT:
+					listing.side.assign(deck_dict.side.deck as Dictionary)
+					listing.is_side_draft = true
+					listing.side_max = side_deck.max_size
 		listing.sideboard.assign(deck_dict.sideboard as Dictionary)
 
 	listing.mouse_entered.connect(_on_listing_hovered.bind(listing))
@@ -109,8 +117,8 @@ func _on_listing_pressed(listing: DeckListing) -> void:
 		selected_listing = listing
 		return
 
-	%DeckEditor.visible = true
-	%DeckEditor.load_deck(listing.deck_dict)
+	DECK_EDITOR.visible = true
+	DECK_EDITOR.load_deck(listing.deck_dict)
 
 
 func _on_bk_btn_pressed() -> void:
@@ -131,8 +139,8 @@ func _on_bk_btn_pressed() -> void:
 
 
 func _on_load_btn_pressed() -> void:
-	%DeckEditor.visible = true
-	%DeckEditor.load_deck(selected_listing.deck_dict)
+	DECK_EDITOR.visible = true
+	DECK_EDITOR.load_deck(selected_listing.deck_dict)
 	$PopupBlocker.visible = false
 
 
@@ -142,18 +150,19 @@ func _on_cancel_btn_pressed() -> void:
 
 func _on_add_deck_btn_pressed() -> void:
 	var side_dict := {}
-	var side_deck: Variant = Global.ruleset.side_decks.values()[0]
-	if side_deck is Ruleset.SideDeckCategory:
-		side_dict.name = side_deck.name
-		side_deck = side_deck.decks.values()[0]
-		side_dict.category = side_deck.name
-	else:
-		side_dict.name = side_deck.name
+	if not Global.ruleset.side_decks.is_empty():
+		var side_deck: Variant = Global.ruleset.side_decks.values()[0]
+		if side_deck is Ruleset.SideDeckCategory:
+			side_dict.name = side_deck.name
+			side_deck = side_deck.decks.values()[0]
+			side_dict.category = side_deck.name
+		else:
+			side_dict.name = side_deck.name
 
-	if side_deck.type == Ruleset.SideDeck.Type.DRAFT:
-		side_dict.deck = {}
+		if side_deck.type == Ruleset.SideDeck.Type.DRAFT:
+			side_dict.deck = {}
 
-	%DeckEditor.load_deck(
+	DECK_EDITOR.load_deck(
 		{
 			name = "New Deck",
 			icon = "Squirrel.png",
@@ -163,7 +172,7 @@ func _on_add_deck_btn_pressed() -> void:
 			sideboard = {}
 		}
 	)
-	%DeckEditor.visible = true
+	DECK_EDITOR.visible = true
 
 
 func _on_file_selected(path: String) -> void:
