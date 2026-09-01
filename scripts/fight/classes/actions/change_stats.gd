@@ -20,9 +20,9 @@ static func action_type() -> Type:
 	return Type.CHANGE_STATS
 
 
-func _init(cid: String, p: int, h: int) -> void:
+func _init(cid: String, a: int, h: int) -> void:
 	card_id = cid
-	attack = p;
+	attack = a;
 	health = h;
 
 

@@ -79,7 +79,7 @@ func on_card_moved(card: Card, from: BoardManager.Slot, to: BoardManager.Slot) -
 func on_card_transformed(card: Card, card_data: Ruleset.CardData) -> void:
 	return
 	
-func on_card_changed_stats(card: Card, power_gained: int, health_gained: int) -> void:
+func on_card_stats_changed(card: Card, attack: int, health: int) -> void:
 	return
 
 
