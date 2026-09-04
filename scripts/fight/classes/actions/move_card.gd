@@ -28,8 +28,8 @@ func resolve(fight_manager: FightManager) -> void:
 		return
 	from_slot.card = null
 	to_slot.card = card
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_card_moved(card, from_slot, to_slot)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_card_moved(card, from_slot, to_slot)
 	)
 
 

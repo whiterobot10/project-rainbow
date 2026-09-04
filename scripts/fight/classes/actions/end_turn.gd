@@ -18,7 +18,7 @@ func resolve(fight_manager: FightManager) -> void:
 			fight_manager.opp_id if player_id == Global.uuid else (Global.uuid as String)
 		)
 	)
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_turn_end(player_id))
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_turn_end(player_id))
 
 
 func as_dict() -> Dictionary:

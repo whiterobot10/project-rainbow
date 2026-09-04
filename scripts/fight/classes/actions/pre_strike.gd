@@ -28,8 +28,8 @@ func resolve(fight_manager: FightManager) -> void:
 		fight_manager._no_activation()
 		return
 	fight_manager._push_action(CardStrikeAction.new(striker_id, pos, to_face))
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: return sigil.pre_card_strike(striker, victim_slot, to_face)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: return hook.pre_card_strike(striker, victim_slot, to_face)
 	)
 
 

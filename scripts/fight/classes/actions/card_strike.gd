@@ -39,8 +39,8 @@ func resolve(fight_manager: FightManager) -> void:
 		fight_manager._push_action(
 			DamageCard.new(victim_slot.card.id, striker.attack, IDType.CARD, striker.id)
 		)
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_card_strike(striker, pos, to_face)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_card_strike(striker, pos, to_face)
 	)
 
 

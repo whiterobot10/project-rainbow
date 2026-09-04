@@ -5,6 +5,10 @@ var already_die: Array[String] = []
 
 
 func on_card_perished(card: Card) -> void:
+	
+	if card == attached_card:
+		return
+	
 	if (
 		card.id in already_die
 		or (

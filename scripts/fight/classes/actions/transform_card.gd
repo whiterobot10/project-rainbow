@@ -16,8 +16,8 @@ func _init(cid: String, cd: Ruleset.CardData) -> void:
 
 func resolve(fight_manager: FightManager) -> void:
 	var card := fight_manager.card_manager.get_card_by_id(card_id)
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_card_transformed(card, card_data)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_card_transformed(card, card_data)
 	)
 	var damage_taken := card.card_data.health as int - card.health
 	card.card_data = card_data

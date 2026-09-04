@@ -22,8 +22,8 @@ func resolve(fight_manager: FightManager) -> void:
 	if card == null and player_id != Global.uuid:
 		# if it is null assume the card is valid on the other end and just add it to the hand
 		fight_manager.opp_data.hand_size += 1
-		await fight_manager._activate_sigils(
-			func(sigil: Sigil) -> void: sigil.on_card_added(card, player_id)
+		await fight_manager._activate_hooks(
+			func(hook: ActionHook) -> void: hook.on_card_added(card, player_id)
 		)
 		return
 	if card == null:
@@ -44,8 +44,8 @@ func resolve(fight_manager: FightManager) -> void:
 
 	data.public_card.append(card)
 	fight_manager.hand_manager.position_card()
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_card_added(card, player_id)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_card_added(card, player_id)
 	)
 
 

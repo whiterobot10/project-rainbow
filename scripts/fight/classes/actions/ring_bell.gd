@@ -16,7 +16,9 @@ func _init(pid: String) -> void:
 func resolve(fight_manager: FightManager) -> void:
 	fight_manager._push_action(EndTurnAction.new(player_id))
 	fight_manager._push_action(CombatAction.new(player_id))
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_bell_rung(player_id))
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_bell_rung(player_id)
+	)
 
 
 func as_dict() -> Dictionary:

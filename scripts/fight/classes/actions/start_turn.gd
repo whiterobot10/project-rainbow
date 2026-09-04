@@ -16,7 +16,7 @@ func resolve(fight_manager: FightManager) -> void:
 	fight_manager.is_active = Global.uuid == player_id
 	fight_manager._push_action(RefreshEnergyAction.new(fight_manager.active_id()))
 	fight_manager._push_action(ChangeCellsAction.new(1, fight_manager.active_id()))
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_turn_start(player_id))
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_turn_start(player_id))
 
 
 func as_dict() -> Dictionary:

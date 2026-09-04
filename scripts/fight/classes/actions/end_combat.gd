@@ -14,7 +14,7 @@ func _init(pid: String) -> void:
 
 func resolve(fight_manager: FightManager) -> void:
 	fight_manager.in_combat = false
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_combat_end())
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_combat_end())
 
 
 func as_dict() -> Dictionary:

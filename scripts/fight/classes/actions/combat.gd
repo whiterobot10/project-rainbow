@@ -14,7 +14,7 @@ func _init(pid: String) -> void:
 
 func resolve(fight_manager: FightManager) -> void:
 	fight_manager.in_combat = true
-	await fight_manager._activate_sigils(func(s: Sigil) -> void: s.on_combat_start())
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_combat_start())
 	fight_manager._push_action(EndCombatAction.new(player_id))
 	var t := fight_manager.board_manager.get_active_row(player_id == Global.uuid)
 	t.reverse()

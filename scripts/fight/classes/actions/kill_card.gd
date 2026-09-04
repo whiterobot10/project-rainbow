@@ -30,7 +30,7 @@ func resolve(fight_manager: FightManager) -> void:
 			card.id
 		)
 	)
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_card_perished(card))
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_card_perished(card))
 	for sigil in card._sigils:
 		sigil.static_ability(true)
 	fight_manager.card_manager.move_card(card_id, Card.Zone.GRAVEYARD)

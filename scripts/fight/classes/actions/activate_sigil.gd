@@ -29,9 +29,9 @@ func resolve(fight_manager: FightManager) -> void:
 	if active_sigil == null:
 		push_warning("Can't activate out of bound sigil on card")
 		return
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void:
-			sigil.on_sigil_activate(card, active_sigil, source_id, source_type)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void:
+			hook.on_sigil_activate(card, active_sigil, source_id, source_type)
 	)
 
 

@@ -25,8 +25,8 @@ func resolve(fight_manager: FightManager) -> void:
 	var data := fight_manager.get_data(player_id)
 	data.bones += amount
 	var card := fight_manager.card_manager.get_card_by_id(death_source_id)
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_bone_changed(amount, player_id, card)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_bone_changed(amount, player_id, card)
 	)
 
 

@@ -1,5 +1,5 @@
 @abstract class_name Sigil
-extends TextureRect
+extends ActionHook
 
 ## Most method in this class create an action that is appended to the internal stack of this sigil.
 ## They are promises that this will happens.
@@ -14,7 +14,6 @@ var attached_card: Card
 var _stack: Array[Action]
 
 # --- Sigil non event hook ---
-
 
 func blood_value() -> int:
 	return 0
@@ -56,66 +55,11 @@ func static_ability(is_reset: bool) -> void:
 	pass
 
 
-# --- All the sigil event hook ---
-
-
-## Called after [AddCardAction] resolved. This mean that the card have already been added.
-## [param card] can be [code]null[/code] if the card is not public or known to the current player.
-func on_card_added(card: Card, player_id: String) -> void:
-	return
-
-
-## Called after [PlayCardAction] resolved. This mean that the card is already on board.
-func on_card_played(
-	card: Card, pos: Vector2i, placer_type: Action.IDType, placer_id: String
-) -> void:
-	return
-
-
-func on_card_moved(card: Card, from: BoardManager.Slot, to: BoardManager.Slot) -> void:
-	return
-
-
-func on_card_transformed(card: Card, card_data: Ruleset.CardData) -> void:
-	return
-	
-func on_card_stats_changed(card: Card, attack: int, health: int) -> void:
-	return
-
-
-func on_sigil_activate(
-	card: Card, sigil: Sigil, source_id: String, source_type: Action.IDType
-) -> void:
-	return
-
-
-func on_bell_rung(player_id: String) -> void:
-	return
-
-
-## Called after [EndTurnAction] resolved.
-func on_turn_end(player_id: String) -> void:
-	return
-
-
-## Called after [StartTurnAction] resolved.
-func on_turn_start(player_id: String) -> void:
-	return
-
-
-## Called when [CombatAction] resolved bef fore all the strike and attack are put onto the stack. For
-## those that change how the card attack use [method on_attack].
-func on_combat_start() -> void:
-	return
-
-
-func on_combat_end() -> void:
-	return
-
-
-func pre_card_strike(striker: Card, victim_slot: BoardManager.Slot, to_face: bool) -> void:
-	return
-
+## Called whenever an action is added to the stack. If this return a non empty array the top action
+## of the stack is replace with the returned value.
+## Unless it is absolutely necessary don't use this hook.
+func replace_action(type: Action.Type, act: Action) -> Array[Action]:
+	return []
 
 ## Called after [CardAttackAction] resolved. This will dictate what [CardStrikeAction] the card will
 ## do whatever strike group this function spit out. If by the end of all the strike sigils activation
@@ -123,59 +67,8 @@ func pre_card_strike(striker: Card, victim_slot: BoardManager.Slot, to_face: boo
 func on_card_attacked(card: Card) -> Array[CardAttackAction.StrikeGroup]:
 	return []
 
-
-func on_card_strike(striker: Card, pos: Vector2i, to_face: bool) -> void:
-	pass
-
-
-func on_card_damaged(
-	victim: Card, amount: int, attacker_type: Action.IDType, attacker_id: String
-) -> void:
-	return
-
-
-## Called just before [KillCardAction] resolved. This mean that the card haven't actually die or
-## been move to the graveyard
-func on_card_perished(card: Card) -> void:
-	return
-
-
-## Called after [TipScaleAction] resolved. This means that the scale is already tipped.
-func on_scale_tipped(amount: int) -> void:
-	return
-
-
-## Called after [ChangeBonesAction] resolved. This means that the bones already changed. [death_card]
-## is the card that die to produce this bone, can be [code]null[/code] if bone changed otherwise
-func on_bone_changed(amount: int, player_id: String, death_card: Card) -> void:
-	return
-
-
-func on_cell_changed(amount: int, player_id: String) -> void:
-	return
-
-
-func on_energy_changed(amount: int, player_id: String) -> void:
-	return
-
-
-func on_energy_refresh(player_id: String) -> void:
-	return
-
-
-## Called after [SacrificeCardAction] resolved. This means the ard is still alive and on the board.
-func on_card_sacrificed(card: Card) -> void:
-	return
-
-
-## Called whenever an action is added to the stack. If this return a non empty array the top action
-## of the stack is replace with the returned value.
-## Unless it is absolutely necessary don't use this hook.
-func replace_action(type: Action.Type, act: Action) -> Array[Action]:
-	return []
-
-
 @warning_ignore_restore("unused_parameter")
+
 
 # --- Helper function and utils ---
 
@@ -264,6 +157,12 @@ func create_and_add_token(card_data: Ruleset.CardData, player_id := "", source_i
 
 func change_bone(amount: int, player_id: String, death_source_id := "") -> void:
 	add_action(ChangeBonesAction.new(amount, player_id, death_source_id))
+	
+func change_cells(amount: int, player_id: String, is_empty: bool = false) -> void:
+	add_action(ChangeCellsAction.new(amount, player_id, is_empty))
+	
+func change_energy(amount: int, player_id: String) -> void:
+	add_action(ChangeEnergyAction.new(amount, player_id))
 
 
 func sacrifice_card(card_id: String) -> void:

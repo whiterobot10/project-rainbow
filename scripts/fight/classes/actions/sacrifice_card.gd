@@ -15,7 +15,7 @@ func _init(cid: String) -> void:
 func resolve(fight_manager: FightManager) -> void:
 	fight_manager._push_action(KillCardAction.new(card_id))
 	var card := fight_manager.card_manager.get_card_by_id(card_id)
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_card_sacrificed(card))
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_card_sacrificed(card))
 
 
 func as_dict() -> Dictionary:

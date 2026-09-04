@@ -22,7 +22,7 @@ func _init(ruleset: Dictionary) -> void:
 	)
 
 	for card: Dictionary in ruleset.cards:
-		var old_data := card
+		var old_data: Dictionary = card
 
 		@warning_ignore("shadowed_variable_base_class")
 		var traits := []
@@ -32,6 +32,8 @@ func _init(ruleset: Dictionary) -> void:
 			traits.append("bloodless")
 		if "sigils" in old_data and "Boneless" in old_data.sigils:
 			traits.append("boneless")
+		if "ant" in old_data.name.to_lower():
+			traits.append("ant")
 
 		var temple := "beast"
 		if "blood_cost" in old_data:
@@ -56,12 +58,14 @@ func _init(ruleset: Dictionary) -> void:
 				metadata.defrost_form = old_data.evolution
 			elif "Transformer" in old_data.sigils:
 				metadata.transform_form = old_data.evolution
+
+		var sp_atk_map := {"ant": "ant", "mox": "emerald", "Bell": "bell", "Hand": "hand"}
 		# various int conversion are due to json defaulting to float
 		cards[card.name] = (CardData.new(
 			{
 				name = old_data.name,
-				attack =
-				old_data.atkspecial if "atkspecial" in old_data else (old_data.attack as int),
+				attack = old_data.attack if "attack" in old_data else 0,
+				special_attack = sp_atk_map.get(old_data.get("atkspecial", ""), ""),
 				health = old_data.health,
 				sigils =
 				(

@@ -37,8 +37,8 @@ func resolve(fight_manager: FightManager) -> void:
 	card.attack_buf += attack
 	card.health += health
 
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void: sigil.on_card_changed_stats(card, attack, health)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void: hook.on_card_changed_stats(card, attack, health)
 	)
 	if card.health <= 0:
 		fight_manager._push_action(KillCardAction.new(card_id))

@@ -34,6 +34,8 @@ func add_card(card_data: Ruleset.CardData, zone: Card.Zone, id := "") -> Card:
 	for sigil_idx: int in len(card._sigils):
 		var sigil := card._sigils[sigil_idx]
 		sigil.fight_manager = fight_manager
+	if card._special_attack != null:
+		card._special_attack.fight_manager = fight_manager
 	card.active_pressed.connect(
 		func(sigil_idx: int) -> void: fight_manager._on_active_pressed(card, sigil_idx)
 	)

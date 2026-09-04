@@ -21,9 +21,9 @@ func _init(vid: String, a: int, at: IDType, aid: String) -> void:
 func resolve(fight_manager: FightManager) -> void:
 	var victim := fight_manager.card_manager.get_card_by_id(victim_id)
 	victim.health -= amount
-	await fight_manager._activate_sigils(
-		func(sigil: Sigil) -> void:
-			sigil.on_card_damaged(victim, amount, attacker_type, attacker_id)
+	await fight_manager._activate_hooks(
+		func(hook: ActionHook) -> void:
+			hook.on_card_damaged(victim, amount, attacker_type, attacker_id)
 	)
 	if victim.health <= 0:
 		fight_manager._push_action(KillCardAction.new(victim_id))

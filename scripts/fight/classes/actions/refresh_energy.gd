@@ -15,7 +15,7 @@ func _init(pid: String) -> void:
 func resolve(fight_manager: FightManager) -> void:
 	var data := fight_manager.get_data(player_id)
 	data.energy = data.cells
-	await fight_manager._activate_sigils(func(sigil: Sigil) -> void: sigil.on_energy_refresh(player_id))
+	await fight_manager._activate_hooks(func(hook: ActionHook) -> void: hook.on_energy_refresh(player_id))
 
 
 func as_dict() -> Dictionary:
