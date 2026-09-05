@@ -11,6 +11,11 @@ extends TextureRect
 ## [param card] can be [code]null[/code] if the card is not public or known to the current player.
 func on_card_added(card: Card, player_id: String) -> void:
 	return
+	
+## Called after [DiscardCardAction] resolved. This mean that the card has already been discarded.
+## [param card] can be [code]null[/code] if the card is not public or known to the current player.
+func on_card_discarded(card: Card, player_id: String) -> void:
+	return
 
 
 ## Called after [PlayCardAction] resolved. This mean that the card is already on board.

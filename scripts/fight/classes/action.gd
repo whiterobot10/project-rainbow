@@ -27,6 +27,8 @@ enum Type {
 	ADD_CARD,
 	## Action representing drawing a card from a deck.
 	DRAW_CARD,
+	## Action representing removing a card from a hand.
+	DISCARD_CARD,
 	## Action representing playing a card.
 	PLAY_CARD,
 	## Action representing creating a new token, this token will just float around in limbo.

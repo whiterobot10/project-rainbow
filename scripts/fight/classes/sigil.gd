@@ -140,6 +140,8 @@ func add_card(player_id: String, card_id: String) -> String:
 	add_action(AddCardAction.new(player_id, card_id))
 	return card_id
 
+func discard_card(player_id: String, card_id: String) -> void:
+	add_action(DiscardCardAction.new(player_id, card_id))
 
 ## Create a new token and add it to [param player_id]'s hand with id [param card_data].
 ## [param player_id] default to [method controller_id], [param source_id] default to
