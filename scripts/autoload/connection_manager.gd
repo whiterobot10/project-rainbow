@@ -66,7 +66,7 @@ class Player:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	socket.connect_to_url("ws://0.0.0.0:42069")
+	socket.connect_to_url("ws://127.0.0.1:42069")
 
 
 func _process(_delta: float) -> void:

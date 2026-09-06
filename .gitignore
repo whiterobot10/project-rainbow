@@ -2,3 +2,12 @@
 .godot/
 /android/
 addons/godot_super-wakatime
+asset/sigils/Brood Parasite.png.import
+asset/sigils/Catch of the Day.png.import
+asset/sigils/Clinger.png.import
+project.godot
+scripts/autoload/connection_manager.gd
+scripts/fight/classes/actions/change_cells.gd
+scripts/fight/classes/actions/change_cells.gd
+scripts/autoload/connection_manager.gd
+project.godot

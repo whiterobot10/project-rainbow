@@ -17,6 +17,8 @@ func on_card_played(
 		for handcard in fight_manager.card_manager.get_cards_by_zone(Card.Zone.HAND):
 			discard_card(cont_id, handcard.id)
 	else:
-		for i in range(fight_manager.opp_data.hand_size):
+		for handcard in fight_manager.opp_data.public_card:
+			discard_card(cont_id, handcard.id)
+		for i in range(fight_manager.opp_data.hand_size - fight_manager.opp_data.public_card.size()):
 			discard_card(cont_id, "")
 	draw_cards(DrawCardAction.Deck.MAIN, cards_drawn(), controller_id())
