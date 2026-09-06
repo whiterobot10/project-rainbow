@@ -21,7 +21,6 @@ func resolve(fight_manager: FightManager) -> void:
 	var card := fight_manager.card_manager.get_card_by_id(card_id)
 	if card == null and player_id != Global.uuid:
 		# if it is null assume the card is valid on the other end and just discard it
-		print_debug("discard unknown opponent card")
 		fight_manager.opp_data.hand_size -= 1
 		await fight_manager._activate_hooks(
 			func(hook: ActionHook) -> void: hook.on_card_discarded(card, player_id)

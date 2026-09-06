@@ -134,7 +134,6 @@ func lose_game() -> void:
 
 
 func _draw_starting_hand() -> void:
-	deck.main.insert(0, Ruleset.CardData.new({"sigils":["handy"]}))
 	for i in range(3):
 		_push_action(DrawCardAction.new(DrawCardAction.Deck.MAIN, Global.uuid))
 	_push_action(DrawCardAction.new(DrawCardAction.Deck.SIDE, Global.uuid))
