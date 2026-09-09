@@ -412,6 +412,9 @@ func _resolve_stack() -> void:
 				await ConnectionManager.recieved_packet
 		randomize()
 		action.resolve(self)
+		_activate_sigils(
+			func(sigil: Sigil) -> void: sigil.on_any_action_resolved(action)
+		)
 		while _opp_private.is_empty():
 			await ConnectionManager.recieved_packet
 		var private_trigger: Array[Action]
