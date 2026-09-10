@@ -7,6 +7,10 @@ extends TextureRect
 @warning_ignore_start("unused_parameter")  # keep the signature clean while avoiding warning
 
 
+func on_any_action_resolved(type: Action.Type, act: Action) -> void:
+	return
+
+
 ## Called after [AddCardAction] resolved. This mean that the card have already been added.
 ## [param card] can be [code]null[/code] if the card is not public or known to the current player.
 func on_card_added(card: Card, player_id: String) -> void:

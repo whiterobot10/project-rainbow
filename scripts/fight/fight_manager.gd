@@ -412,6 +412,7 @@ func _resolve_stack() -> void:
 				await ConnectionManager.recieved_packet
 		randomize()
 		action.resolve(self)
+		await _activate_hooks(func(hook: ActionHook) -> void: hook.on_any_action_resolved(action.action_type() ,action))
 		while _opp_private.is_empty():
 			await ConnectionManager.recieved_packet
 		var private_trigger: Array[Action]
