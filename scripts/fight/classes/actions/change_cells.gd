@@ -21,7 +21,7 @@ func resolve(fight_manager: FightManager) -> void:
 	data.cells += amount
 	if give_energy:
 		data.energy = min(data.energy + amount, data.cells)
-	await fight_manager._activate_sigils(
+	await fight_manager._activate_hooks(
 		func(hook: ActionHook) -> void: hook.on_cell_changed(amount, player_id)
 	)
 
